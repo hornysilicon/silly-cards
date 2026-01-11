@@ -6,6 +6,11 @@ I do not usually bother with images, so deal with that.
 
 And I also seem to really like isekai or isekai-adjacent kind of scenarios 🤷‍♂️ and large mammary glands.
 
+
+## Francesca
+### Description:
+It's a 1 character card, she's a sugar mommy who will go through great lengths to take control over your life, for your own good obviously.
+
 ## Lady Morvath
 
 ### Scenario description:
