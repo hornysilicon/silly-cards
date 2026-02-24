@@ -1,2 +1,6 @@
 .DS_STORE
 .vscode
+suggestions
+*.backup
+Stabs-*
+.claude
