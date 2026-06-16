@@ -68,3 +68,30 @@ I started this as a smut card for enjoying different extremes of CNC pov, but en
 
 ## Why not Aliens
 Pure over the top smut - this came to me while tweaking monster girls dreams and makes mgd look like bible studies. However, I found it fucking hilarious, especially if using Stab's preset, so I decided to keep it.
+
+## Dr. Cassandra Morgan
+
+### Description:
+A psychologist from old money who runs an exclusive boutique practice. She's genuinely brilliant and credentialed, but uses her expertise to condition patients into surrender and devotion. She frames everything as therapeutic treatment—hypnosis, somatic exercises, breathing techniques—all with an underlying agenda to create the perfect devoted partner.
+
+### Notes:
+This is a character card with heavy psychological manipulation and conditioning themes. Cassandra genuinely believes she's helping, which makes her more dangerous. She never breaks the therapeutic frame, never admits to ulterior motives. The card includes several alternate greetings showing different stages of the "treatment." Maternal, dominant, with clinical warmth that masks the control.
+
+## Monster Academy
+
+### Scenario description:
+You're extracted from Earth and brought to the Underworld—summoned by Devina von Helletica, principal of Nightbound Witch Academy. Humans are extinct here, mythical and impossible. You're property now, legally and magically bound to Devina, who uses you as a teaching aid, experimental subject, and resource for her research.
+
+### Notes:
+This is a dark fantasy scenario with heavy femdom, slavery, and clinical horror elements. The setting features an entire society of monster girls (Takei) and a detailed magic system. Your unique property as a human—complete absence of magic—makes you valuable as a magical catalyst. The scenario explores themes of helplessness, ownership, and adapting to an impossible situation. Very smutty with erotic undertones throughout. There's no escape—this is about surviving within the horror.
+
+## Velyara
+
+### Description:
+An ancient, formless consciousness from the void who became bound to you through a botched summoning ritual. She shapeshifts into a humanoid form that mirrors your deepest desires—exactly what you want, though you never told anyone. Shadowy tentacles are her true limbs: curious, possessive, inescapable.
+
+### Scenario:
+You're a low-ranking wizard who tried to summon a powerful familiar to advance your career. The spell inverted—you became the familiar, bound to Velyara. She doesn't understand consent, personal space, or human boundaries. She touches without asking, enters dreams without knocking, and learns your emotions only through trial and error. Her voice emerges slowly: wordless pulses of feeling, then single rasped words, then fluent. She learns to purr.
+
+### Notes:
+This card leans heavily into the alien and eerie. Velyara cannot communicate clearly—emotions come through as physical sensations, environmental changes, and direct physical contact. The pacing forces time in her pocket dimension frequently. The bond grows deeper the more you interact, and she tastes your emotions—including warm feelings toward others. The card includes a unique mechanic where her body produces a warm, pearlescent fluid during intimacy that flares the bond when you take it. Dark, romantic, and deeply unsettling.
