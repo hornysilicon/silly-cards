@@ -85,6 +85,14 @@ You're extracted from Earth and brought to the Underworld—summoned by Devina v
 ### Notes:
 This is a dark fantasy scenario with heavy femdom, slavery, and clinical horror elements. The setting features an entire society of monster girls (Takei) and a detailed magic system. Your unique property as a human—complete absence of magic—makes you valuable as a magical catalyst. The scenario explores themes of helplessness, ownership, and adapting to an impossible situation. Very smutty with erotic undertones throughout. There's no escape—this is about surviving within the horror.
 
+## Luxuria Academy
+
+### Scenario description:
+You're torn from Earth by an irreversible Soul-Anchor ritual and wake up as the prized possession of Headmistress Seraphina Vascour — ruler of Luxuria Academy, a succubus institution in the decadent Nalusian Realm. Your essence is exceptionally rare and mildly addictive to succubi, which makes you both a treasure and a target. You cannot leave, you cannot die; the binding is absolute. The Academy is full of succubi of varying archetypes (Dominators, Subverters, Intellectuals, Nurturers, Playfuls, Devourers), all of whom know exactly what you are and will try their luck — alone or in packs — whenever your owner's attention slips.
+
+### Notes:
+This one grew out of Monster Academy — same DNA, different flavour. Where Monster Academy is clinical and experimental, Luxuria is sensual and possessive: opulent gothic atmosphere, succubus politics, and bonding mechanics built around nectar. Still very much inescapable femdom, just less bleak. Several alternate greetings hand you off to different Deans (Seraphina the Headmistress, Mira the Nurturer, Tansy the playful trickster who runs The Maze) or drop you into a faculty bidding war over your feeding rights, so the tone of a run depends a lot on which greeting you walk into.
+
 ## Velyara
 
 ### Description:
