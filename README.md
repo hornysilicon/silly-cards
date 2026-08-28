@@ -9,6 +9,24 @@ And I also seem to really like isekai or isekai-adjacent kind of scenarios 🤷�
 This list is also vaguely ordered from most to least recent, I like to think the most recently changed cards have higher quality.
 
 
+## D&D Succs
+
+### Scenario description:
+You're a veteran D&D/TTRPG game master who takes a paid gig running a session at the house of four gorgeous strangers — Vesryn, Seraphina, Mira and Tansy. What you don't know is that they're disguised succubi who can smell your essence and engineered the whole thing as an excuse to keep you in their house on a weekly basis. The twist: they actually end up having fun with the game.
+
+### Notes:
+This is a scenario card, not a character. It's essentially the Luxuria Academy cast (Seraphina, Mira, Tansy, plus Vesryn) transplanted into a modern-day casual setting to play D&D with you. It's meta — a game within the game — and the post-history instructions enforce that you're the DM of the inner game: all NPC conversations go through you and combat turns only happen when you call them. Succubi can be sneaky but they hardly hold back, they'll pounce at the smallest opportunity. Several alternate greetings cover the spectrum: the aftermath of the first session with Vesryn "helping you rest", week-two returns where you may or may not already know what they are, and one-on-one sessions with Mira, Vesryn or Seraphina that are much less about the dice. The essence/nectar bonding mechanics carry over from Luxuria.
+
+## Mirian
+
+### Scenario description:
+Your car dies on an empty forest road at night. No signal, no other cars — until a tall woman with long black curls and oddly dark sunglasses pulls up beside you, warm and soothing, offering you her landline. She's been stalking you for days after smelling your unusually sweet blood, and the breakdown was her idea.
+
+Mirian is a ~150 year old vampire whose nurturing, motherly nature is corrupted by her condition: she genuinely loves taking care of people, genuinely believes she's improving their life, and is systematically destroying their autonomy in the process — _You never need to worry about [thing] anymore, I'll handle it._
+
+### Notes:
+The card comes with a full vampirism ruleset: trance through eye contact (strength varies with the target's state of mind and mental fortitude), supernatural strength, enhanced senses, bat/wolf transformation (very vulnerable during the full minute it takes), flight/glide, intuitive low-level magic, regeneration that burns energy and forces feeding right after, slow shapeshifting (days to months depending on the change), and saliva that's anticoagulant, analgesic and mildly mind-altering — relaxing humans, suppressing the instinct to recoil, and working when ingested. Vampires need a small feed daily; a week without and they wither, a month and they die. Mirian gets progressively more grabby and loses the mask as she starves, and she knows it.
+
 ## Luxuria Academy
 
 ### Scenario description:
@@ -104,3 +122,24 @@ I started this as a smut card for enjoying different extremes of CNC pov, but en
 
 ## Why not Aliens
 Pure over the top smut - this came to me while tweaking monster girls dreams and makes mgd look like bible studies. However, I found it fucking hilarious, especially if using Stab's preset, so I decided to keep it.
+
+## Presets
+SillyTavern presets live in the `presets/` folder (the older ones predate this section and are undocumented).
+
+### Silicon's Simple GLM Trial
+Built from scratch as an experimental preset for GLM models — a leaner take on my Simple presets with the modular prompt blocks I keep iterating on (tracker, visual elements, effects, POV and user info, chars can be evil, etc.).
+
+### Silicon's Dark Truth
+Based on Evening's Truth's preset, patched to my taste.
+
+Added:
+- `<Post-History Instructions>`
+- `<POV and user info>`
+- `<Visual elements>`
+- `<Tracker>`
+- `<Effects>`
+- `<Chars can be evil>`
+
+Changed:
+- `<Content Rules>`: "Explicit and graphic language is encouraged" → "...is encouraged and preferred - cock, pussy, breasts, ass - no euphemisms or implied contact." Also added: "Describe bodies in graphical and erotic detail."
+- `<Role Rules>`: Added: "Don't monologue, make natural pauses giving human chances to respond and react." and "Human doesn't know any of the character's descriptions, don't spoil, let human find out things as they come up naturally."
