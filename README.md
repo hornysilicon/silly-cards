@@ -130,7 +130,7 @@ SillyTavern presets live in the `presets/` folder (the older ones predate this s
 Built from scratch as an experimental preset for GLM models — a leaner take on my Simple presets with the modular prompt blocks I keep iterating on (tracker, visual elements, effects, POV and user info, chars can be evil, etc.).
 
 ### Silicon's Dark Truth
-Based on Evening's Truth's preset, patched to my taste.
+Based on [Evening Truth's](https://rentry.org/Evening-Truth-Roleplay-Prompts) preset, patched to my taste.
 
 Added:
 - `<Post-History Instructions>`

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card — Horny Silicon's ST Cards</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container narrow">
+
+    <a class="backlink" href="index.html">&larr; All cards</a>
+
+    <header class="detail-head" id="head">
+      <div class="kicker" id="d-kicker"></div>
+      <h1 id="d-name"></h1>
+      <div class="ornament"><span class="diamond"></span></div>
+      <p class="tagline" id="d-tagline"></p>
+      <div class="meta-row" id="d-meta"></div>
+      <ul class="chips" id="d-tags" style="justify-content:center"></ul>
+    </header>
+
+    <figure class="hero-figure" id="d-hero" hidden>
+      <img id="d-hero-img" src="" alt="">
+      <figcaption id="d-hero-cap"></figcaption>
+    </figure>
+
+    <div id="dd-detail" hidden></div>
+
+    <div id="default-detail">
+      <div class="section-title" id="blurb-title">The Scenario</div>
+      <div class="prose" id="d-blurb"></div>
+
+      <div class="section-title">Notes</div>
+      <div class="prose" id="d-notes"></div>
+
+      <div id="d-cast-block" hidden>
+        <div class="section-title">Dramatis Personae</div>
+        <div class="cast" id="d-cast"></div>
+      </div>
+
+      <div id="d-roster-block" hidden>
+        <div class="section-title">The Roster</div>
+        <div class="roster-grid" id="d-roster"></div>
+      </div>
+    </div>
+
+    <div class="download-bar">
+      <a class="btn" id="d-dl" href="#" download>Download card</a>
+      <a class="alt" id="d-src" href="#">view source on GitHub</a>
+    </div>
+
+    <footer>
+      Cards and presets by Horny Silicon ·
+      <a href="https://github.com/hornysilicon/silly-cards">view the repository</a>
+    </footer>
+
+  </div>
+
+  <script src="data.js?v=3"></script>
+  <script>
+    const qs = new URLSearchParams(location.search);
+    const card = CARDS.find(c => c.id === qs.get('id')) || CARDS[0];
+    document.title = `${card.name} — Horny Silicon's ST Cards`;
+
+    document.getElementById('d-kicker').textContent = card.kicker;
+    document.getElementById('d-name').textContent = card.name;
+    document.getElementById('d-tagline').innerHTML = card.tagline;
+    document.getElementById('blurb-title').textContent = card.kicker.includes('character') ? 'The Character' : 'The Scenario';
+    document.getElementById('d-blurb').innerHTML = `<p>${card.blurb}</p>`;
+    document.getElementById('d-notes').innerHTML = `<p>${card.notes}</p>`;
+    document.getElementById('d-meta').innerHTML =
+      `<span>${card.date}</span><span>·</span><span>${card.greetings} greeting${card.greetings > 1 ? 's' : ''}</span>` +
+      (card.link ? `<span>·</span><a href="${card.link}" target="_blank" rel="noopener">${card.linkLabel || 'reference'}</a>` : '');
+    document.getElementById('d-tags').innerHTML = card.tags.map(t => `<li>${t}</li>`).join('');
+    document.getElementById('d-dl').href = rawURL(card.file);
+    document.getElementById('d-src').href = blobURL(card.file);
+
+    if (card.poster) {
+      const hero = document.getElementById('d-hero');
+      hero.hidden = false;
+      const img = document.getElementById('d-hero-img');
+      img.src = card.poster; img.alt = card.name;
+      document.getElementById('d-hero-cap').textContent = card.posterCaption || card.name;
+    }
+
+    if (card.characters) {
+      document.getElementById('d-cast-block').hidden = false;
+      const cast = document.getElementById('d-cast');
+      for (const ch of card.characters) {
+        const pic = ch.img
+          ? `<div class="pic"><img src="${ch.img}" alt="${ch.name}" loading="lazy"></div>`
+          : `<div class="pic">${ch.name.replace(/^Lady |^Dr\. /, '')[0]}</div>`;
+        const row = document.createElement('div');
+        row.className = 'cast-row';
+        row.innerHTML = `${pic}<div class="info"><div class="name">${ch.name}</div><div class="line">${ch.line}</div></div>`;
+        cast.appendChild(row);
+      }
+    }
+
+    if (card.roster === 'eldoria') {
+      document.getElementById('d-roster-block').hidden = false;
+      const grid = document.getElementById('d-roster');
+      for (const [slug, name] of ELDORIA_ROSTER) {
+        const cell = document.createElement('div');
+        cell.className = 'roster-cell';
+        cell.innerHTML = `<img src="assets/images/eldoria/${slug}.jpg" alt="${name}" loading="lazy"><div class="name">${name}</div>`;
+        grid.appendChild(cell);
+      }
+    }
+
+    // D&D Succs: render the card's own creator-notes page.
+    // Local preview: try the repo-root JSON next to docs/ (works when serving
+    // the repo root). On Pages that path 404s and we fall back to raw main.
+    if (card.detail === 'dd') {
+      const mount = document.getElementById('dd-detail');
+      fetch(`../${encodeURIComponent(card.file)}`)
+        .catch(() => fetch(rawURL(card.file)))
+        .then(r => r && r.ok ? r : fetch(rawURL(card.file)))
+        .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(j => {
+          let html = j.creatorcomment || (j.data && j.data.creator_notes) || '';
+          const RAW = 'https://raw.githubusercontent.com/hornysilicon/silly-cards/main/images/dnd-succs/';
+          html = html
+            .replace(RAW + 'cast.png', 'assets/images/dnd-succs/cast.jpg')
+            .replace(RAW + 'seraphina.png', 'assets/images/dnd-succs/seraphina.jpg')
+            .replace(RAW + 'vesryn.png', 'assets/images/dnd-succs/vesryn.jpg')
+            .replace(RAW + 'mira.png', 'assets/images/dnd-succs/mira.jpg')
+            .replace(RAW + 'tansy.png', 'assets/images/dnd-succs/tansy.jpg');
+          mount.innerHTML = html;
+          mount.hidden = false;
+          document.getElementById('default-detail').hidden = true;
+        })
+        .catch(() => { /* fall back to the default layout */ });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horny Silicon's ST Cards</title>
+  <meta name="description" content="SillyTavern character cards and presets by Horny Silicon.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <header class="masthead">
+      <div class="over">SillyTavern cards &amp; presets</div>
+      <h1>Horny Silicon<span class="amp">'</span>s ST Cards</h1>
+      <div class="ornament"><span class="diamond"></span></div>
+      <div class="sub">I like to make cards because... I like to make cards. Version control keeps them safe — sharing them is the upside.</div>
+    </header>
+
+    <div class="advisory">
+      Adults only (18+) — these are adult-fiction roleplay cards. The page stays tasteful; the JSON files you download are the real, unedited deal.
+    </div>
+
+    <div class="section-title">The Cards</div>
+
+    <main class="grid" id="cards"></main>
+
+    <div class="section-title">Presets</div>
+    <div class="preset-list" id="presets"></div>
+
+    <footer>
+      Cards and presets by Horny Silicon ·
+      <a href="https://github.com/hornysilicon/silly-cards">view the repository</a>
+    </footer>
+
+  </div>
+
+  <script src="data.js?v=3"></script>
+  <script>
+    const grid = document.getElementById('cards');
+    for (const c of CARDS) {
+      const art = c.poster
+        ? `<div class="poster"><img src="${c.poster}" alt="${c.name}" loading="lazy"></div>`
+        : `<div class="textonly"><div class="initial">${c.name[0]}</div><div class="hint">no art — deal with that</div></div>`;
+      const a = document.createElement('a');
+      a.className = 'gcard';
+      a.href = `card.html?id=${c.id}`;
+      a.innerHTML = `
+        ${art}
+        <div class="body">
+          <div class="kicker">${c.kicker}</div>
+          <h2>${c.name}</h2>
+          <p class="tagline">${c.tagline}</p>
+          <ul class="chips">${c.tags.slice(0, 4).map(t => `<li>${t}</li>`).join('')}</ul>
+          <div class="meta">
+            <span>${c.greetings} greeting${c.greetings > 1 ? 's' : ''}</span>
+            <span>${c.date}</span>
+          </div>
+        </div>`;
+      grid.appendChild(a);
+    }
+
+    const plist = document.getElementById('presets');
+    for (const p of PRESETS) {
+      const div = document.createElement('div');
+      div.className = 'preset';
+      div.innerHTML = `
+        <div>
+          <div class="pname">${p.name}</div>
+          <div class="pblurb">${p.blurb}</div>
+        </div>
+        <a class="dl" href="${rawURL(p.file)}" download>Download</a>`;
+      plist.appendChild(div);
+    }
+  </script>
+</body>
+</html>
