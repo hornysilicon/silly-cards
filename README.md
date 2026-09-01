@@ -1,5 +1,7 @@
 # Horny Silicon's ST Cards
 
+🌐 Browse the cards (and their art) on the [GitHub Pages site](https://hornysilicon.github.io/silly-cards/).
+
 I like to make cards because... I like to make cards and I needed a way to safely store them and version control, the upside is that it's also a great way to share them.
 
 I do not usually bother with images, so deal with that.
@@ -143,3 +145,12 @@ Added:
 Changed:
 - `<Content Rules>`: "Explicit and graphic language is encouraged" → "...is encouraged and preferred - cock, pussy, breasts, ass - no euphemisms or implied contact." Also added: "Describe bodies in graphical and erotic detail."
 - `<Role Rules>`: Added: "Don't monologue, make natural pauses giving human chances to respond and react." and "Human doesn't know any of the character's descriptions, don't spoil, let human find out things as they come up naturally."
+
+### Silicon's Dark Truth 5.3
+Same base as Silicon's Dark Truth, tuned for GLM 5.3 Flash — a smaller model that rambles more, so the changes all push toward shorter turns and tighter information control.
+
+Changed from Silicon's Dark Truth:
+- `<Post-History Instructions>`: Added "The longer you talk the more mistakes you make, keep your responses short."
+- `<Role Rules>`: Replaced the soft "make natural pauses" monologue rule with a hard stop: "Do **NOT** monologue, when NPCs talk or do things to {{user}} you MUST stop your turn to allow for a reaction/response from {{user}}. In general NPCs get one big action per turn."
+- `<Response Rules>`: Knowledge barrier tightened — characters can't know "{{user}}'s thoughts or events and dialogue they weren't present for."
+- `reasoning_effort`: high → auto (GLM 5.3 Flash reasons fast enough on its own).

@@ -226,6 +226,11 @@ const ELDORIA_ROSTER = [
 
 const PRESETS = [
   {
+    name: "Silicon's Dark Truth 5.3",
+    file: "presets/Silicon's Dark Truth 5.3.json",
+    blurb: "Dark Truth tuned for GLM 5.3 Flash — a smaller model that rambles more, so everything pushes toward shorter turns and tighter information control: an anti-rambling line in the post-history instructions, a hard one-big-action-per-turn stop in the role rules, and a stricter knowledge barrier."
+  },
+  {
     name: "Silicon's Dark Truth",
     file: "presets/Silicon's Dark Truth.json",
     blurb: "Based on <a href='https://rentry.org/Evening-Truth-Roleplay-Prompts'>Evening Truth's</a> preset, patched to my taste — added post-history instructions, POV/user info, visual elements, tracker, effects and \u201cchars can be evil\u201d blocks, plus a more explicit content-rules pass."
