@@ -13,6 +13,7 @@ When documenting a preset change, diff it against the related/similarly-named pr
 
 ## Conventions
 
+- **NEVER commit files the user hasn't explicitly mentioned.** Untracked files in the repo are WIP and stay uncommitted until the user names them. When asked to commit/push, stage only the files the user referred to — "push everything" means everything *discussed in the conversation*, not everything in `git status`.
 - Card/preset JSONs are SillyTavern exports; don't reformat or reorder keys.
 - `docs/assets/images/<card-id>/` holds the site art; `images/` (repo root) holds card-embedded art.
 - Never commit the `.backup` files.
