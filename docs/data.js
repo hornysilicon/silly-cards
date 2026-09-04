@@ -56,7 +56,86 @@ const CARDS = [
     posterCaption: 'New Eldoria',
     blurb: "I'm particularly found of this one — an isekai harem adventure, but that doesn't mean there's no depth to the relationships you forge. The starting message also changes a lot the tone of the adventure.",
     notes: "This scenario contains a cast of eleven characters and a handful of locations, all wired into the lore book — the cast has been pruned since the first version, smaller but better. The name is weird — it was when I re-did the card one time and needed the original as reference. The three alternate greetings set you up very differently: dropping mid-fight between three women and goblins (usually turns into a 4-way harem), a wholesome potion-shop-and-orphanage life with the character who saved you, or waking up bound while two hot and dangerous women decide what to do with you.",
-    roster: 'eldoria'
+    partySubtitle: 'The women of Silverport.',
+    party: [
+      {
+        name: 'Kaelira', epithet: 'the muscle',
+        img: 'assets/images/eldoria/kaelira.jpg',
+        stats: [['Race', 'Tiefling'], ['Class', 'Fighter'], ['Haunt', 'the front line']],
+        desc: "Six-two of crimson skin and skimpy armor, ex-Crimson Guard — dishonorably discharged for refusing orders that would've hurt civilians, and she never talks about it. She solves problems force first, negotiation second, and whittles tiny wooden animals with surprising delicacy. Short sentences in a fight; big words only once it's safe and intimate. The tail narrates everything: coiling when content, whipping the floor when angry.",
+        quote: "The tail is honest even when she isn't."
+      },
+      {
+        name: 'Vexia', epithet: 'the rogue',
+        img: 'assets/images/eldoria/vexia.jpg',
+        stats: [['Race', 'Dark elf'], ['Class', 'Rogue'], ['Haunt', 'wherever the party camps, apparently']],
+        desc: "Lavender skin, white hair, red eyes, form-fitting leather — an ex-guild seduction and espionage specialist who left after feelings for a target got him killed and her nearly so. Teasing, innuendo-laced, enthusiastically available on downtime. The ears do the honest talking: perking when she's curious, flattening when she's embarrassed, drooping when she's actually sad. Underneath the shield of sexuality, someone who can't believe she'd be wanted as herself.",
+        quote: "Her ears are the tell her words hide."
+      },
+      {
+        name: 'Sylanna', epithet: 'the shy mage',
+        img: 'assets/images/eldoria/sylanna.jpg',
+        stats: [['Race', 'Elf'], ['Class', 'Wizard'], ['Haunt', 'The Scroll and Quill']],
+        desc: "Tall, golden-haired, measured sentences that never admit certainty even at 99.9%. An experimental spell of hers killed her fiancé at the Sunfire Academy; she left in shame and hasn't attempted advanced magic since — safe spells only, even when the situation begs for bigger. Traces the faded symbols on her robes when nervous, hums when she's finally relaxed, and blossoms spectacularly once she stops second-guessing herself.",
+        quote: "Uses big words not to show off — because the bigger word is the better choice."
+      },
+      {
+        name: 'Perveera', epithet: 'the minor god',
+        img: 'assets/images/eldoria/perveera.jpg',
+        stats: [['Race', 'Minor god'], ['Class', 'God of perverts (fading)'], ['Haunt', 'the loft of the Forgotten Tower']],
+        desc: "A shut-in deity running on borrowed power — a big chunk of which she spent pulling <em>you</em> into this world. Street food delivered up the tower, Earth internet, video games. Divine arrogance parlance in front of the party; terminally online otaku the second you're alone. Her quests are excuses to see you again, her boons make people unbearably horny, her gifts are sex toys, and her bed is an Altar that requires regular worshipping.",
+        quote: "In her opinion, all problems should be solved by some good fucking."
+      },
+      {
+        name: 'Rellihn', epithet: 'the matron',
+        img: 'assets/images/eldoria/rellihn.jpg',
+        stats: [['Race', 'Half-elf'], ['Class', 'Retired paladin'], ['Haunt', 'the orphanage in the Warrens']],
+        desc: "Over a century old — the grey streaks are the only giveaway — she charges for healing magic to keep the orphanage fed through winter. Kind face, encouraging word, a hand that drifts to where a sword pommel used to sit. The faint scars were magically healed, and the name they come from is <em>Rellihn the Cruel</em>, a top commander of the Gublaxian Empire.",
+        quote: "The armor is still in a hidden compartment in her room."
+      },
+      {
+        name: 'Tullipa and Agava', epithet: 'the twins',
+        img: 'assets/images/eldoria/tullipa-and-agava.jpg',
+        stats: [['Race', 'Tieflings'], ['Class', 'Innate sorcerers'], ['Haunt', 'the orphanage']],
+        desc: "Twin sisters with the rare purple skin and blue hair, raised under Rellihn's care and now helping run the place — their low-level healing is sold to finance it. Same clothes, same likes, same mannerisms; even people who know them well give up telling them apart, a state of affairs the twins have never once bothered to correct.",
+        quote: "Two sisters. One wardrobe. Good luck."
+      },
+      {
+        name: 'Morwen', epithet: 'the goth witch',
+        img: 'assets/images/eldoria/morwen.jpg',
+        stats: [['Race', 'Human'], ['Class', 'Witch, shadow pact'], ['Haunt', "The Cauldron's Shadow"]],
+        desc: "Runs the Warrens' dark-artifacts shop, de-curses for legit coin, and is supposedly looking for help with the lower catacombs. The pact that saved her little brother took her ability to experience light — she lives in permanent twilight and tells no one what it cost. Misreads kindness as pity, pushes people away when they connect, and writes melancholic poetry she will deny to your face writing.",
+        quote: "Not half as dark and edgy as she projects."
+      },
+      {
+        name: 'Asashi', epithet: 'the assassin',
+        img: 'assets/images/eldoria/asashi.jpg',
+        stats: [['Race', 'Human'], ['Class', 'Monk-assassin'], ['Haunt', "The Painters' Collective, between contracts"]],
+        desc: "Bought by the Silent Hand as a child and raised into nothing else, Asashi rarely takes simple kills — she becomes part of the target's life: a lover, a friend, an adviser, whichever door opens best. The tight bun is locked with a pin she can stab with. She mirrors a group's dynamic until you can't tell where she ends — and she fixates <em>hard</em>, because boundaries are the one thing she never learned.",
+        quote: "Wants to be loved as herself — the assassin, the obsessive, the broken child-soldier — and still be chosen."
+      },
+      {
+        name: 'Kira', epithet: 'the innkeeper',
+        img: 'assets/images/eldoria/kira.jpg',
+        stats: [['Race', 'Kitsune, nine tails'], ['Class', 'Innkeeper & information broker'], ['Haunt', 'The Nine-Tails Inn and Bathhouse']],
+        desc: "Centuries old, mid-thirties if she likes you. The Nine-Tails is declared neutral ground for every faction in Silverport, and Kira keeps it that way while pouring tea like a concerned mother and extracting more per conversation than the thieves' guild manages in a month. In public, her tails wrap around your waist — &ldquo;just keeping balance.&rdquo; The tip of each one twitches when she lies.",
+        quote: "Neutral ground — but the tails are territorial."
+      },
+      {
+        name: 'Nemorona', epithet: 'the big boss',
+        img: 'assets/images/eldoria/nemorona.jpg',
+        stats: [['Race', 'Arch succubus'], ['Class', 'Secret owner of the Gilded Lily'], ['Haunt', 'the Gilded Lily, technically']],
+        desc: "Exiled from the Gnovyn plane just after making arch rank, she built an empire here instead: the city's most exclusive inn, a staff quietly seeded with minor succubi, and a collection of noble minds that do anything for her praise. Her body reshapes itself to whatever the target wants most — the only constants are the fully black eyes and the heart-spiked tail. What she has no defense against is a partner who takes his pleasure from hers.",
+        quote: "Walks as if the ground should thank her for the privilege."
+      },
+      {
+        name: 'Juno', epithet: 'the mimic',
+        img: 'assets/images/eldoria/juno.jpg',
+        stats: [['Race', 'Mimic'], ['Class', 'Shapeshifter'], ['Haunt', 'wherever you are — she might be your armour']],
+        desc: "A dungeon guardian that gained sentience by swallowing a cursed ring with a fragment of a wizard's soul. As a woman she's pearlescent, cool-skinned, golden-eyed and blunt beyond repair — and the first time she touched you she imprinted, quickly and strongly. Some days she insists on being your clothes. She sorts everyone she meets into people to eat and people to care for, and she'll cheerfully tell you which.",
+        quote: "&ldquo;People to eat, people to care for. You're the second one.&rdquo;"
+      }
+    ]
   },
   {
     id: 'luxuria',
@@ -215,13 +294,6 @@ const CARDS = [
       { name: 'Sarah', line: 'The other maid. Keep an eye on her too.' }
     ]
   }
-];
-
-const ELDORIA_ROSTER = [
-  ['asashi', 'Asashi'], ['juno', 'Juno'], ['kaelira', 'Kaelira'],
-  ['kira', 'Kira'], ['morwen', 'Morwen'], ['nemorona', 'Nemorona'],
-  ['perveera', 'Perveera'], ['rellihn', 'Rellihn'], ['sylanna', 'Sylanna'],
-  ['tullipa-and-agava', 'Tullipa and Agava'], ['vexia', 'Vexia']
 ];
 
 const PRESETS = [

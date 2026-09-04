@@ -229,22 +229,70 @@ h1, h2, h3 { font-family: 'Cinzel', Georgia, serif; color: var(--ink); }
 }
 .cast-row .info .line { font-style: italic; color: var(--muted); margin-top: 4px; }
 
-.roster-grid {
-  display: grid; gap: 14px; margin-top: 8px;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+/* party — D&D Succs-style cast panels */
+
+.party-sub {
+  text-align: center; font-style: italic; color: var(--muted);
+  font-size: 15.5px; margin: 0 0 14px;
 }
-.roster-cell {
-  background: var(--panel); border: 1px solid var(--border); padding: 8px;
-  text-align: center;
+.party { display: flex; flex-direction: column; gap: 18px; max-width: 780px; margin: 0 auto; }
+.party-panel {
+  background: var(--panel); border: 1px solid var(--border); padding: 18px;
 }
-.roster-cell img {
-  width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center top;
-  display: block;
+.party-panel.img-right { border-right: 3px solid var(--pc); }
+.party-panel.img-left { border-left: 3px solid var(--pc); }
+.party-panel .inner { display: flex; gap: 18px; flex-wrap: wrap; }
+.party-panel.img-right .inner { flex-direction: row-reverse; }
+.party-panel img {
+  width: 150px; height: 205px; object-fit: cover; object-position: center top;
+  border: 1px solid var(--pc); display: block; flex: none; cursor: zoom-in;
+  transition: transform .18s ease;
 }
-.roster-cell .name {
-  font-family: 'Cinzel', Georgia, serif; font-size: 10.5px; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--muted); padding-top: 8px;
+.party-panel img:hover { transform: scale(1.03); }
+.pinfo { flex: 1 1 280px; min-width: 220px; }
+.pname {
+  font-family: 'Cinzel', Georgia, serif; font-size: 21px; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--pc);
 }
+.pepithet { font-style: italic; color: var(--muted); margin: 2px 0 10px; }
+.pstat {
+  display: flex; justify-content: space-between; gap: 12px;
+  border-top: 1px solid var(--border-soft); padding: 7px 0; font-size: 14.5px;
+}
+.pstat .k {
+  font-family: 'Cinzel', Georgia, serif; font-size: 10.5px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--muted); padding-top: 3px; white-space: nowrap;
+}
+.pstat .v { text-align: right; }
+.party-panel .desc { margin: 14px 0 0; }
+.party-panel .quote { margin: 12px 0 0; font-style: italic; color: var(--pc); }
+
+/* lightbox */
+
+.lightbox {
+  display: none; position: fixed; inset: 0; z-index: 100;
+  background: rgba(10, 7, 5, 0.93);
+  align-items: center; justify-content: center; padding: 34px;
+}
+.lightbox.open { display: flex; }
+.lightbox .lb-figure { margin: 0; text-align: center; }
+.lightbox img {
+  max-width: calc(100vw - 140px); max-height: 76vh; display: block; margin: 0 auto;
+  border: 1px solid var(--border);
+}
+.lightbox figcaption {
+  font-family: 'Cinzel', Georgia, serif; font-size: 11px; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--muted); padding-top: 14px;
+}
+.lb-btn {
+  position: absolute; background: none; border: none; color: var(--muted);
+  font-family: 'Cinzel', Georgia, serif; font-size: 34px; line-height: 1;
+  padding: 14px 18px; cursor: pointer;
+}
+.lb-btn:hover { color: var(--ink); }
+.lb-close { top: 10px; right: 14px; font-size: 28px; }
+.lb-prev { left: 8px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 8px; top: 50%; transform: translateY(-50%); }
 
 /* download */
 
@@ -289,8 +337,15 @@ footer {
 
 #dd-detail { margin-top: 26px; }
 #dd-detail > div { max-width: 780px; margin: 0 auto; }
+#dd-detail img { cursor: zoom-in; transition: transform .18s ease; }
+#dd-detail img:hover { transform: scale(1.02); }
 
 @media (max-width: 640px) {
   .gcard .poster, .gcard .textonly { height: 220px; }
   .cast-row .pic { flex-basis: 110px; width: 110px; min-height: 110px; }
+  .party-panel { padding: 14px; }
+  .party-panel img { width: 110px; height: 150px; }
+  .lightbox { padding: 12px; }
+  .lightbox img { max-width: calc(100vw - 28px); }
+  .lb-btn { font-size: 26px; padding: 10px 12px; }
 }

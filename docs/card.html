@@ -43,9 +43,10 @@
         <div class="cast" id="d-cast"></div>
       </div>
 
-      <div id="d-roster-block" hidden>
-        <div class="section-title">The Roster</div>
-        <div class="roster-grid" id="d-roster"></div>
+      <div id="d-party-block" hidden>
+        <div class="section-title">Dramatis Personae</div>
+        <div class="party-sub" id="d-party-sub"></div>
+        <div class="party" id="d-party"></div>
       </div>
     </div>
 
@@ -61,7 +62,17 @@
 
   </div>
 
-  <script src="data.js?v=3"></script>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Portrait viewer">
+    <button class="lb-btn lb-close" id="lb-close" aria-label="Close">&times;</button>
+    <button class="lb-btn lb-prev" id="lb-prev" aria-label="Previous portrait">&#8249;</button>
+    <figure class="lb-figure">
+      <img id="lb-img" src="" alt="">
+      <figcaption id="lb-cap"></figcaption>
+    </figure>
+    <button class="lb-btn lb-next" id="lb-next" aria-label="Next portrait">&#8250;</button>
+  </div>
+
+  <script src="data.js?v=4"></script>
   <script>
     const qs = new URLSearchParams(location.search);
     const card = CARDS.find(c => c.id === qs.get('id')) || CARDS[0];
@@ -102,16 +113,70 @@
       }
     }
 
-    if (card.roster === 'eldoria') {
-      document.getElementById('d-roster-block').hidden = false;
-      const grid = document.getElementById('d-roster');
-      for (const [slug, name] of ELDORIA_ROSTER) {
-        const cell = document.createElement('div');
-        cell.className = 'roster-cell';
-        cell.innerHTML = `<img src="assets/images/eldoria/${slug}.jpg" alt="${name}" loading="lazy"><div class="name">${name}</div>`;
-        grid.appendChild(cell);
-      }
+    const lbList = [];
+    if (card.party) {
+      document.getElementById('d-party-block').hidden = false;
+      document.getElementById('d-party-sub').textContent = card.partySubtitle || '';
+      const party = document.getElementById('d-party');
+      const partyColors = ['#d9a03f', '#b3a1ce', '#6fb3a0', '#e0863f'];
+      card.party.forEach((ch, i) => {
+        const row = document.createElement('div');
+        row.className = 'party-panel ' + (i % 2 === 0 ? 'img-right' : 'img-left');
+        row.style.setProperty('--pc', ch.color || partyColors[i % 4]);
+        row.innerHTML =
+          '<div class="inner">' +
+            `<img src="${ch.img}" alt="${ch.name}" loading="lazy">` +
+            '<div class="pinfo">' +
+              `<div class="pname">${ch.name}</div>` +
+              `<div class="pepithet">${ch.epithet}</div>` +
+              ch.stats.map(([k, v]) => `<div class="pstat"><span class="k">${k}</span><span class="v">${v}</span></div>`).join('') +
+              `<p class="desc">${ch.desc}</p>` +
+              `<p class="quote">${ch.quote}</p>` +
+            '</div>' +
+          '</div>';
+        row.querySelector('img').addEventListener('click', () => lbOpen(i));
+        party.appendChild(row);
+        lbList.push({
+          name: ch.name, epithet: ch.epithet,
+          full: ch.img.replace('/eldoria/', '/eldoria/full/')
+        });
+      });
     }
+
+    // Lightbox for the party portraits.
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-img');
+    const lbCap = document.getElementById('lb-cap');
+    let lbIdx = 0;
+
+    function lbShow(i) {
+      lbIdx = ((i % lbList.length) + lbList.length) % lbList.length;
+      const ch = lbList[lbIdx];
+      lbImg.src = ch.full;
+      lbImg.alt = ch.name;
+      lbCap.textContent = ch.epithet ? `${ch.name} — ${ch.epithet}` : ch.name;
+    }
+    function lbOpen(i) {
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      lbShow(i);
+      document.getElementById('lb-close').focus();
+    }
+    function lbClose() {
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    lb.addEventListener('click', e => { if (e.target === lb) lbClose(); });
+    document.getElementById('lb-close').addEventListener('click', lbClose);
+    document.getElementById('lb-prev').addEventListener('click', () => lbShow(lbIdx - 1));
+    document.getElementById('lb-next').addEventListener('click', () => lbShow(lbIdx + 1));
+    document.addEventListener('keydown', e => {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') lbClose();
+      else if (e.key === 'ArrowLeft') lbShow(lbIdx - 1);
+      else if (e.key === 'ArrowRight') lbShow(lbIdx + 1);
+    });
 
     // D&D Succs: render the card's own creator-notes page.
     // Local preview: try the repo-root JSON next to docs/ (works when serving
@@ -132,6 +197,14 @@
             .replace(RAW + 'mira.png', 'assets/images/dnd-succs/mira.jpg')
             .replace(RAW + 'tansy.png', 'assets/images/dnd-succs/tansy.jpg');
           mount.innerHTML = html;
+          // Lightbox: same viewer as the party portraits.
+          mount.querySelectorAll('img').forEach((img, i) => {
+            lbList.push({
+              name: img.alt || 'Illustration',
+              full: img.getAttribute('src').replace('/dnd-succs/', '/dnd-succs/full/')
+            });
+            img.addEventListener('click', () => lbOpen(i));
+          });
           mount.hidden = false;
           document.getElementById('default-detail').hidden = true;
         })
