@@ -10,6 +10,24 @@ And I also seem to really like isekai or isekai-adjacent kind of scenarios ðŸ¤·â
 
 This list is also vaguely ordered from most to least recent, I like to think the most recently changed cards have higher quality.
 
+## Twisted World
+
+### Scenario description:
+Based on the AVN of the same name, I always thought it had an interesting premise but an meh execution. The premise is: you died, your sould found a brain dead coma patient com another world where all men/women social norms are reversed - hot women will job topless in the street while you're expected to cover up, I've grossely exagareted alot of dynamics, but expect to be harassed for existing and flirting your way out of trouble with the police. Almost anyone you hit on will want to bang you, so there's that.
+There are four permanent characters on the card: The family who took care of you (mother and two adult daughters), the doctor who oversaw your case, and a creepy social worker in charge of your reintegration into society.
+-# Not my jam, but there's an incest version, where you're also the adopted son of Marian and step brother to her adopted daughters, though this version I stopped working on earlier, so it has less stuff and it's objectively worse.
+There are 3 opening messages:
+- You just woke up from coma and soul transfer and got to your new home with Marian and her daughters. Marian is about to be handsy on you.
+- You just woke up but you go to your own appartment, full sandbox mode.
+- You've been living on your own for 6 months now, you're not an starved twig anymore.
+
+### Notes:
+I recommend using a custom persona for this depending on how much info you usually place on the persona, for extra immersion everyone should be calling by a different name than what you're used to because it's the name of the OJ'owner of the body.
+Fun stuff that has happened to me while playing this:
+- I was fined for wearing shorts too shorts.
+- Got "womanhandled" by neighbours who wanted to write their phone number on my hand.
+- Became a Twitch thott 
+
 
 ## D&D Succs
 
