@@ -72,7 +72,7 @@
     <button class="lb-btn lb-next" id="lb-next" aria-label="Next portrait">&#8250;</button>
   </div>
 
-  <script src="data.js?v=4"></script>
+  <script src="data.js?v=5"></script>
   <script>
     const qs = new URLSearchParams(location.search);
     const card = CARDS.find(c => c.id === qs.get('id')) || CARDS[0];
@@ -178,10 +178,11 @@
       else if (e.key === 'ArrowRight') lbShow(lbIdx + 1);
     });
 
-    // D&D Succs: render the card's own creator-notes page.
-    // Local preview: try the repo-root JSON next to docs/ (works when serving
-    // the repo root). On Pages that path 404s and we fall back to raw main.
-    if (card.detail === 'dd') {
+    // Cards with detail: 'notes' (D&D Succs, Twisted World) render the card's
+    // own creator-notes page. Local preview: try the repo-root JSON next to
+    // docs/ (works when serving the repo root). On Pages that path 404s and we
+    // fall back to raw main.
+    if (card.detail === 'notes') {
       const mount = document.getElementById('dd-detail');
       fetch(`../${encodeURIComponent(card.file)}`)
         .catch(() => fetch(rawURL(card.file)))
@@ -189,19 +190,16 @@
         .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
         .then(j => {
           let html = j.creatorcomment || (j.data && j.data.creator_notes) || '';
-          const RAW = 'https://raw.githubusercontent.com/hornysilicon/silly-cards/main/images/dnd-succs/';
-          html = html
-            .replace(RAW + 'cast.png', 'assets/images/dnd-succs/cast.jpg')
-            .replace(RAW + 'seraphina.png', 'assets/images/dnd-succs/seraphina.jpg')
-            .replace(RAW + 'vesryn.png', 'assets/images/dnd-succs/vesryn.jpg')
-            .replace(RAW + 'mira.png', 'assets/images/dnd-succs/mira.jpg')
-            .replace(RAW + 'tansy.png', 'assets/images/dnd-succs/tansy.jpg');
+          const rawImg = p => `https://raw.githubusercontent.com/${SITE.user}/${SITE.repo}/${SITE.branch}/images/${p}`;
+          for (const [from, to] of Object.entries(card.imgMap || {})) {
+            html = html.split(rawImg(from)).join(to);
+          }
           mount.innerHTML = html;
           // Lightbox: same viewer as the party portraits.
           mount.querySelectorAll('img').forEach((img, i) => {
             lbList.push({
               name: img.alt || 'Illustration',
-              full: img.getAttribute('src').replace('/dnd-succs/', '/dnd-succs/full/')
+              full: img.getAttribute('src').replace(/^(assets\/images\/[^/]+)\//, '$1/full/')
             });
             img.addEventListener('click', () => lbOpen(i));
           });

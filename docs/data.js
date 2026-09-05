@@ -12,6 +12,29 @@ function blobURL(...segments) {
 
 const CARDS = [
   {
+    id: 'twisted-world',
+    name: 'Twisted World',
+    kicker: 'Not a character — a scenario',
+    tagline: 'You died — and your soul landed in a braindead stranger from a world where every gender norm runs the other way. Expect to be harassed for existing.',
+    file: 'Twisted World.json',
+    date: '2026-09-05',
+    greetings: 3,
+    tags: ['scenario', 'isekai', 'modern', 'role reversal', 'group'],
+    poster: 'assets/images/twisted-world/poster.jpg',
+    posterCaption: 'Twisted World',
+    blurb: "Based on the AVN of the same name — interesting premise, meh execution, so I rebuilt it my way. You died and your soul landed in a two-years-braindead coma patient from a world where all men/women social norms are reversed: hot women jog topless in the street while you're expected to cover up, men are the ones harassed, judged and policed. Almost anyone you hit on will want to bang you, so there's that.",
+    notes: "The cast: the family that took you in — Marian and her adult daughters Yonda and Jane — plus Dr. Tomoe, who oversaw your case, and Johanna, the creepy social worker in charge of your reintegration (your benefits live in her folder). The card carries a full lore book — household, home, building, a d100 chaos engine, and bit players like Frederick, the nurse who exists to sell the reversal. Three openings: homecoming with a handsy Marian, full sandbox in your own apartment, and six-months-in once the starved-twig era is over. I recommend a custom persona — everyone calls you by the body's name, and it hurts immersion in the best way.",
+    detail: 'notes',
+    imgMap: {
+      'Twisted%20World/poster.png': 'assets/images/twisted-world/poster.jpg',
+      'Twisted%20World/Marian.png': 'assets/images/twisted-world/marian.jpg',
+      'Twisted%20World/Yonda.png': 'assets/images/twisted-world/yonda.jpg',
+      'Twisted%20World/Jane.png': 'assets/images/twisted-world/jane.jpg',
+      'Twisted%20World/Tomoe.png': 'assets/images/twisted-world/tomoe.jpg',
+      'Twisted%20World/Johanna.png': 'assets/images/twisted-world/johanna.jpg'
+    }
+  },
+  {
     id: 'dd-succs',
     name: 'D&D Succs',
     kicker: 'Not a character — a scenario',
@@ -24,7 +47,14 @@ const CARDS = [
     posterCaption: 'The party, assembled',
     blurb: "You're a veteran D&D/TTRPG game master who takes a paid gig running a session at the house of four gorgeous strangers — Vesryn, Seraphina, Mira and Tansy. What you don't know is that they're disguised succubi who can smell your essence and engineered the whole thing as an excuse to keep you in their house on a weekly basis. The twist: they actually end up having fun with the game.",
     notes: "It's essentially the Luxuria Academy cast (Seraphina, Mira, Tansy, plus Vesryn) transplanted into a modern-day casual setting to play D&D with you. It's meta — a game within the game — and the post-history instructions enforce that you're the DM of the inner game: all NPC conversations go through you and combat turns only happen when you call them. Succubi can be sneaky but they hardly hold back, they'll pounce at the smallest opportunity. Several alternate greetings cover the spectrum: the aftermath of the first session with Vesryn \"helping you rest\", week-two returns where you may or may not already know what they are, and one-on-one sessions with Mira, Vesryn or Seraphina that are much less about the dice. The essence/nectar bonding mechanics carry over from Luxuria.",
-    detail: 'dd'
+    detail: 'notes',
+    imgMap: {
+      'dnd-succs/cast.png': 'assets/images/dnd-succs/cast.jpg',
+      'dnd-succs/seraphina.png': 'assets/images/dnd-succs/seraphina.jpg',
+      'dnd-succs/vesryn.png': 'assets/images/dnd-succs/vesryn.jpg',
+      'dnd-succs/mira.png': 'assets/images/dnd-succs/mira.jpg',
+      'dnd-succs/tansy.png': 'assets/images/dnd-succs/tansy.jpg'
+    }
   },
   {
     id: 'mirian',
