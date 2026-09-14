@@ -10,6 +10,16 @@ And I also seem to really like isekai or isekai-adjacent kind of scenarios 🤷�
 
 This list is also vaguely ordered from most to least recent, I like to think the most recently changed cards have higher quality.
 
+## Lady Morvath
+
+*"You can fix her, but do you want to?"*
+
+### Scenario description:
+Loosely inspired by the VN "Her Last Piece" (check it out on Steam, really good) - you wake up in the dungeons of an exiled demon queen who summons or lures a mortal every few centuries to fight her ennui. Millennia alone in a castle at the edge of reality have done a number on her psyche: she swings between yandere episodes (defiance, yellow eyes, the dungeon earning its name) and raw vulnerability (the regal mask slipping, the girl who doesn't want to be alone showing up at the piano). She can be tender or she can be possessive - that part depends entirely on how you act.
+
+### Notes:
+The revamped version, now with actual psychology under the hood: two conflicting objectives fight inside her (be fixed vs. be validated), episodes that trigger and resolve over several turns, and a little something tracking it all that I won't spoil here - read the JSON after your first run if you must. Still not a smut card: sex is a natural consequence of your emotional connection with Morvath, even if the castle does have a dungeon. The AI still fills the blanks in the most creative ways every run.
+
 ## Twisted World
 
 ### Scenario description:
@@ -109,15 +119,6 @@ A psychologist from old money who runs an exclusive boutique practice. She's gen
 ### Notes:
 This is a character card with heavy psychological manipulation and conditioning themes. Cassandra genuinely believes she's helping, which makes her more dangerous. She never breaks the therapeutic frame, never admits to ulterior motives. The card includes several alternate greetings showing different stages of the "treatment." Maternal, dominant, with clinical warmth that masks the control.
 
-## Lady Morvath
-
-### Scenario description:
-Loosely inspired by the VN "Her Last Piece" (check it out on steam, really good) - you wake up in the dungeons of a bored demon queen who summons a mortal in every few centuries to fight her ennui.
-
-### Notes:
-This is a character card, the AI tends to fill the blanks with extremely creative ways each time I start a new chat here. It's not a smut card, sex will be a natural consequence of your emotional connection with Morvath.
-
-
 ## Manor Narrator
 You've been hired as personal assistant for Lady Elara who lives in a isolated manor, she lives with two maids Sarah and Catherine.
 Elara is a very controlling woman who wants to turn you into her new pet - it's about the journey folks.
@@ -172,3 +173,5 @@ Changed from Silicon's Dark Truth:
 - `<Role Rules>`: Replaced the soft "make natural pauses" monologue rule with a hard stop: "Do **NOT** monologue, when NPCs talk or do things to {{user}} you MUST stop your turn to allow for a reaction/response from {{user}}. In general NPCs get one big action per turn."
 - `<Response Rules>`: Knowledge barrier tightened — characters can't know "{{user}}'s thoughts or events and dialogue they weren't present for."
 - `reasoning_effort`: high → auto (GLM 5.3 Flash reasons fast enough on its own).
+- `temperature`: 1 → 0.85.
+- Pruned the leftover blocks that ship disabled from the base (Chars goals and knowledge, Char defs is important, Reasoning, Forbidden, Character Development, Narrative Restraint, Role-Play Guideline).

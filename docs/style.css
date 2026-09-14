@@ -267,6 +267,23 @@ h1, h2, h3 { font-family: 'Cinzel', Georgia, serif; color: var(--ink); }
 .party-panel .desc { margin: 14px 0 0; }
 .party-panel .quote { margin: 12px 0 0; font-style: italic; color: var(--pc); }
 
+/* image gallery (paired portraits) */
+
+.gallery {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+  max-width: 620px; margin: 0 auto;
+}
+.gallery figure { margin: 0; background: var(--panel); border: 1px solid var(--border); padding: 8px; }
+.gallery img {
+  display: block; width: 100%; height: auto; cursor: zoom-in;
+  transition: transform .18s ease;
+}
+.gallery img:hover { transform: scale(1.02); }
+.gallery figcaption {
+  text-align: center; font-family: 'Cinzel', Georgia, serif; font-size: 10.5px;
+  letter-spacing: 4px; text-transform: uppercase; color: var(--muted); padding-top: 8px;
+}
+
 /* lightbox */
 
 .lightbox {

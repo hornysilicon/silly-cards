@@ -48,6 +48,11 @@
         <div class="party-sub" id="d-party-sub"></div>
         <div class="party" id="d-party"></div>
       </div>
+
+      <div id="d-gallery-block" hidden>
+        <div class="section-title" id="gallery-title"></div>
+        <div class="gallery" id="d-gallery"></div>
+      </div>
     </div>
 
     <div class="download-bar">
@@ -72,7 +77,7 @@
     <button class="lb-btn lb-next" id="lb-next" aria-label="Next portrait">&#8250;</button>
   </div>
 
-  <script src="data.js?v=5"></script>
+  <script src="data.js?v=6"></script>
   <script>
     const qs = new URLSearchParams(location.search);
     const card = CARDS.find(c => c.id === qs.get('id')) || CARDS[0];
@@ -138,8 +143,22 @@
         party.appendChild(row);
         lbList.push({
           name: ch.name, epithet: ch.epithet,
-          full: ch.img.replace('/eldoria/', '/eldoria/full/')
+          full: ch.img.replace(/^(assets\/images\/[^/]+)\//, '$1/full/')
         });
+      });
+    }
+
+    if (card.gallery) {
+      document.getElementById('d-gallery-block').hidden = false;
+      document.getElementById('gallery-title').textContent = card.gallery.title;
+      const gal = document.getElementById('d-gallery');
+      const galBase = lbList.length;
+      card.gallery.images.forEach((im, i) => {
+        const fig = document.createElement('figure');
+        fig.innerHTML = `<img src="${im.img}" alt="${im.caption}" loading="lazy"><figcaption>${im.caption}</figcaption>`;
+        fig.querySelector('img').addEventListener('click', () => lbOpen(galBase + i));
+        gal.appendChild(fig);
+        lbList.push({ name: im.caption, full: im.img.replace(/^(assets\/images\/[^/]+)\//, '$1/full/') });
       });
     }
 

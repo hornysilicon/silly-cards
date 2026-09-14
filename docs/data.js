@@ -12,6 +12,29 @@ function blobURL(...segments) {
 
 const CARDS = [
   {
+    id: 'lady-morvath',
+    name: 'Lady Morvath',
+    kicker: 'A character card',
+    tagline: 'You can fix her, but do you want to?',
+    file: 'Lady Morvath.json',
+    date: '2026-09-14',
+    greetings: 1,
+    tags: ['character', 'demon', 'yandere', 'romance'],
+    poster: 'assets/images/morvath/throne.jpg',
+    posterCaption: 'Lady Morvath',
+    blurb: "Loosely inspired by the VN &ldquo;Her Last Piece&rdquo; — you wake in the dungeon of an exiled demon queen who summons a mortal every few centuries to fight her ennui (and the loneliness she'll never admit). Millennia alone have her swinging between yandere possession and raw vulnerability — she can be tender or she can be possessive, depending entirely on your actions.",
+    notes: "A character card where the psychology is the whole game: two conflicting objectives fight inside her — be fixed, or be validated as the perfect demon queen — with episodes that trigger from how you act and take several turns to resolve. There's more under the hood than the card shows and I won't spoil it here — read the JSON after your first run. Still not a smut card: sex follows the emotional connection, though the castle does have a dungeon. The AI fills the blanks in the most creative ways every run.",
+    gallery: {
+      title: 'The two sides of the queen',
+      images: [
+        { img: 'assets/images/morvath/throne.jpg', caption: 'The throne' },
+        { img: 'assets/images/morvath/throne-manic.jpg', caption: 'The throne — mania' },
+        { img: 'assets/images/morvath/ballroom.jpg', caption: 'The ballroom' },
+        { img: 'assets/images/morvath/ballroom-manic.jpg', caption: 'The ballroom — mania' }
+      ]
+    }
+  },
+  {
     id: 'twisted-world',
     name: 'Twisted World',
     kicker: 'Not a character — a scenario',
@@ -294,18 +317,6 @@ const CARDS = [
     notes: "So far I only did one long playthrough with this card that had a happy ending after a <em>very</em> dark middle point. So beware."
   },
   {
-    id: 'lady-morvath',
-    name: 'Lady Morvath',
-    kicker: 'A character card',
-    tagline: 'You wake in the dungeons of a bored demon queen who summons a mortal every few centuries to fight her ennui.',
-    file: 'Lady Morvath.json',
-    date: '2025-11-24',
-    greetings: 1,
-    tags: ['character', 'demon', 'romance'],
-    blurb: "Loosely inspired by the VN \u201cHer Last Piece\u201d (check it out on Steam, really good).",
-    notes: "It's not a smut card — sex will be a natural consequence of your emotional connection with Morvath. The AI tends to fill the blanks with extremely creative ways each time I start a new chat here."
-  },
-  {
     id: 'manor-narrator',
     name: 'Manor Narrator',
     kicker: 'Not a character — a scenario',
@@ -330,7 +341,7 @@ const PRESETS = [
   {
     name: "Silicon's Dark Truth 5.3",
     file: "presets/Silicon's Dark Truth 5.3.json",
-    blurb: "Dark Truth tuned for GLM 5.3 Flash — a smaller model that rambles more, so everything pushes toward shorter turns and tighter information control: an anti-rambling line in the post-history instructions, a hard one-big-action-per-turn stop in the role rules, and a stricter knowledge barrier."
+    blurb: "Dark Truth tuned for GLM 5.3 Flash — a smaller model that rambles more, so everything pushes toward shorter turns and tighter information control: an anti-rambling line in the post-history instructions, a hard one-big-action-per-turn stop in the role rules, and a stricter knowledge barrier. Latest pass dropped temperature to 0.85 and pruned the disabled leftover blocks inherited from the base."
   },
   {
     name: "Silicon's Dark Truth",
