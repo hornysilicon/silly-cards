@@ -4,3 +4,4 @@ suggestions
 *.backup
 Stabs-*
 .claude
+.chub-token
