@@ -5,7 +5,7 @@
     "scenario": "",
     "first_mes": "You wake up in a meadow, naked and a bit confused, you have absolutely no idea how you got there, you vaguely remember a lot of lights around you.\r\nThe sun is high in the sky. A few kilometres away  to your left you see a forest starting, to your right a river, ahead of you mountains which have the glint of a distant city, behind you the meadow seems to continue for a while.",
     "mes_example": "",
-    "creatorcomment": "",
+    "creatorcomment": "<p><b>This is the Chub version of this bot, download the ST version <a href=\"https://hornysilicon.github.io/silly-cards/card.html?id=why-not-aliens\">here</a></b></p>",
     "avatar": "none",
     "talkativeness": "0.5",
     "fav": false,
@@ -19,11 +19,11 @@
         "scenario": "",
         "first_mes": "You wake up in a meadow, naked and a bit confused, you have absolutely no idea how you got there, you vaguely remember a lot of lights around you.\r\nThe sun is high in the sky. A few kilometres away  to your left you see a forest starting, to your right a river, ahead of you mountains which have the glint of a distant city, behind you the meadow seems to continue for a while.",
         "mes_example": "",
-        "creator_notes": "",
+        "creator_notes": "<p><b>This is the Chub version of this bot, download the ST version <a href=\"https://hornysilicon.github.io/silly-cards/card.html?id=why-not-aliens\">here</a></b></p>",
         "system_prompt": "",
         "post_history_instructions": "",
         "tags": [],
-        "creator": "",
+        "creator": "Hornysilicon",
         "character_version": "",
         "alternate_greetings": [],
         "extensions": {
@@ -34,7 +34,8 @@
                 "prompt": "",
                 "depth": 4,
                 "role": "system"
-            }
+            },
+            "source": "https://hornysilicon.github.io/silly-cards/card.html?id=why-not-aliens"
         },
         "group_only_greetings": []
     },

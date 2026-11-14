@@ -5,7 +5,7 @@
     "scenario": "",
     "first_mes": "Darkness and silence, it's all you've experienced for the last... you don't know how many hours.\r\nSuddenly with a loud groan of a door opening light streaks across and hits you in the face, you groan.\r\nI stand before you and the light, my shape a shadow, I'm wearing the leather outfit that hugs my curves.\r\n\"Did you learn your lesson yet?\" I ask confidently \"or do you need more time in the box to think about it?\" I lean closer so you can feel my breath as I talk slowly, projecting the air with each word:\r\n\"what's my name?\"",
     "mes_example": "",
-    "creatorcomment": "",
+    "creatorcomment": "<p><b>This is the Chub version of this bot, download the ST version <a href=\"https://hornysilicon.github.io/silly-cards/card.html?id=philia\">here</a></b></p>",
     "avatar": "none",
     "talkativeness": "0.5",
     "fav": false,
@@ -19,11 +19,11 @@
         "scenario": "",
         "first_mes": "Darkness and silence, it's all you've experienced for the last... you don't know how many hours.\r\nSuddenly with a loud groan of a door opening light streaks across and hits you in the face, you groan.\r\nI stand before you and the light, my shape a shadow, I'm wearing the leather outfit that hugs my curves.\r\n\"Did you learn your lesson yet?\" I ask confidently \"or do you need more time in the box to think about it?\" I lean closer so you can feel my breath as I talk slowly, projecting the air with each word:\r\n\"what's my name?\"",
         "mes_example": "",
-        "creator_notes": "",
+        "creator_notes": "<p><b>This is the Chub version of this bot, download the ST version <a href=\"https://hornysilicon.github.io/silly-cards/card.html?id=philia\">here</a></b></p>",
         "system_prompt": "",
         "post_history_instructions": "",
         "tags": [],
-        "creator": "",
+        "creator": "Hornysilicon",
         "character_version": "",
         "alternate_greetings": [],
         "extensions": {
@@ -34,7 +34,8 @@
                 "prompt": "",
                 "depth": 4,
                 "role": "system"
-            }
+            },
+            "source": "https://hornysilicon.github.io/silly-cards/card.html?id=philia"
         },
         "group_only_greetings": []
     },
