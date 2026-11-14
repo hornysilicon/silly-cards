@@ -90,6 +90,64 @@ h1, h2, h3 { font-family: 'Cinzel', Georgia, serif; color: var(--ink); }
   background: var(--panel-2);
 }
 
+/* ---------- top nav (subpages) ---------- */
+
+.topnav {
+  padding-top: 28px; text-align: center;
+  font-family: 'Cinzel', Georgia, serif; font-size: 11px;
+  letter-spacing: 3px; text-transform: uppercase;
+}
+.topnav a { color: var(--muted); }
+.topnav a:hover, .topnav a.active { color: var(--ink); }
+.topnav .sep { color: var(--border); margin: 0 14px; }
+.topnav .sep::before { content: "·"; }
+
+/* ---------- page head (subpages) ---------- */
+
+.page-head { text-align: center; padding: 40px 0 6px; }
+.page-head .over {
+  font-family: 'Cinzel', Georgia, serif; font-size: 11px;
+  letter-spacing: 5px; text-transform: uppercase; color: var(--muted);
+}
+.page-head h1 {
+  margin: 14px 0 0; font-weight: 700;
+  font-size: clamp(26px, 4.5vw, 42px); letter-spacing: 4px;
+  line-height: 1.05; text-transform: uppercase;
+}
+.page-head .sub {
+  font-style: italic; font-size: 17px; color: var(--muted);
+  max-width: 640px; margin: 0 auto;
+}
+
+/* ---------- landing directory ---------- */
+
+.directory {
+  display: grid; gap: 22px; margin-top: 44px;
+  grid-template-columns: repeat(2, 1fr);
+}
+.dirent {
+  display: flex; flex-direction: column; gap: 10px;
+  background: var(--panel); border: 1px solid var(--border);
+  padding: 26px 24px 20px; color: var(--body);
+  transition: transform .18s ease, border-color .18s ease;
+}
+.dirent:hover { transform: translateY(-3px); border-color: var(--accent); }
+.dirent .kicker {
+  font-family: 'Cinzel', Georgia, serif; font-size: 10px;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--accent-soft);
+}
+.dirent h2 {
+  margin: 0; font-size: 22px; letter-spacing: 3px;
+  text-transform: uppercase; font-weight: 700;
+}
+.dirent .dnote { margin: 0; font-style: italic; color: var(--muted); font-size: 15.5px; }
+.dirent .go {
+  margin-top: auto; padding-top: 12px;
+  font-family: 'Cinzel', Georgia, serif; font-size: 10px;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--muted);
+}
+.dirent:hover .go { color: var(--accent-soft); }
+
 /* ---------- gallery ---------- */
 
 .grid {
@@ -335,13 +393,16 @@ h1, h2, h3 { font-family: 'Cinzel', Georgia, serif; color: var(--ink); }
   flex-wrap: wrap;
 }
 .preset .pname { font-family: 'Cinzel', Georgia, serif; font-size: 15px; letter-spacing: 2px; color: var(--ink); }
+.preset .pdate { font-size: 12px; letter-spacing: 1px; color: var(--muted); }
 .preset .pblurb { flex: 1 1 320px; font-style: italic; color: var(--muted); font-size: 15.5px; }
-.preset a.dl {
+.preset .phint { margin-top: 8px; font-size: 13.5px; color: var(--muted); letter-spacing: .5px; opacity: .85; }
+.preset .actions { display: flex; gap: 10px; align-items: baseline; }
+.preset a.dl, .preset a.src {
   font-family: 'Cinzel', Georgia, serif; font-size: 10px; letter-spacing: 2.5px;
   text-transform: uppercase; border: 1px solid var(--border); padding: 5px 12px;
   white-space: nowrap;
 }
-.preset a.dl:hover { border-color: var(--accent); color: var(--ink); }
+.preset a.dl:hover, .preset a.src:hover { border-color: var(--accent); color: var(--ink); }
 
 /* ---------- footer ---------- */
 
@@ -358,6 +419,7 @@ footer {
 #dd-detail img:hover { transform: scale(1.02); }
 
 @media (max-width: 640px) {
+  .directory { grid-template-columns: 1fr; }
   .gcard .poster, .gcard .textonly { height: 220px; }
   .cast-row .pic { flex-basis: 110px; width: 110px; min-height: 110px; }
   .party-panel { padding: 14px; }

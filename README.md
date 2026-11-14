@@ -8,17 +8,53 @@ I do not usually bother with images, so deal with that.
 
 And I also seem to really like isekai or isekai-adjacent kind of scenarios 🤷‍♂️ and large mammary glands.
 
-This list is also vaguely ordered from most to least recent, I like to think the most recently changed cards have higher quality.
+This list is also vaguely ordered from most to least recent, I like to think the most recently changed cards have higher quality. The succubi-verse cards live in the `succubi/` folder and are marked as part of the shared universe below.
+
+## Vol'Shrakael
+*Part of the [succubi shared universe](#book-of-the-succubi).*
+
+### Scenario description:
+You're at home doing your normal things when a tear in reality opens in front of you and tentacles pull you through, into the waiting room of a restored castle in the middle of nowhere. She is one of the most influential succubi and managed to skip all protocol to bring you in particular, can you handle her?
+
+### Notes:
+This card is meant to have some mystery and be weird. Some models play her more aggressively than others, but be warned of tentacles and restraints at least.
+
+## Natalia
+*Part of the [succubi shared universe](#book-of-the-succubi).*
+
+### Scenario description:
+She's a Free Use succubus who knocked on your door, there's not much to this card honestly, how long can you flirt and play teasing games with her before you just fuck her.
+
+### Notes:
+One of the simplest cards in this repo.
+
+## Vhesyera
+*Part of the [succubi shared universe](#book-of-the-succubi).*
+
+### Scenario description:
+The Succubi Queen rules her nation from a penthouse at the top of the tallest skyscraper in Luxuria City, and tonight a summoning circle folds you onto her floor. She scryed every realm for a male worth her personal attention, and she settled on you. Nine centuries of appetite, a body that adapts to whatever her target wants most, and absolutely no concept of asking nicely.
+
+### Notes:
+This card often derails into political intrigue with lots of sex in between.
+
+## Luxuria City
+*Part of the [succubi shared universe](#book-of-the-succubi).*
+
+### Scenario description:
+You wake in a five-star hotel room in a city you have never seen: black towers stacked into a violet sky, neon everywhere, and every single person in charge is a succubus. Just a metropolis full of succubi, and every one of them can smell what you are.
+
+### Notes:
+The sandbox of the universe. There is no fixed cast: the city generates its citizens as you explore, each one a fresh succubus with her own type, occupation and agenda straight from the taxonomy baked into the card. Wander, flirt, get hunted, get hired, get kept. Three openings depending on how much you already know about where you landed, including one where the city has already assigned you an owner.
 
 ## Lady Morvath
 
 *"You can fix her, but do you want to?"*
 
 ### Scenario description:
-Loosely inspired by the VN "Her Last Piece" (check it out on Steam, really good) - you wake up in the dungeons of an exiled demon queen who summons or lures a mortal every few centuries to fight her ennui. Millennia alone in a castle at the edge of reality have done a number on her psyche: she swings between yandere episodes (defiance, yellow eyes, the dungeon earning its name) and raw vulnerability (the regal mask slipping, the girl who doesn't want to be alone showing up at the piano). She can be tender or she can be possessive - that part depends entirely on how you act.
+Loosely inspired by the VN "Her Last Piece" (check it out on Steam, really good) - you wake in the dungeons of an exiled demon queen who summons or lures a mortal every few centuries to fight her ennui. Millennia alone have her mental state on the unstable side.
 
 ### Notes:
-The revamped version, now with actual psychology under the hood: two conflicting objectives fight inside her (be fixed vs. be validated), episodes that trigger and resolve over several turns, and a little something tracking it all that I won't spoil here - read the JSON after your first run if you must. Still not a smut card: sex is a natural consequence of your emotional connection with Morvath, even if the castle does have a dungeon. The AI still fills the blanks in the most creative ways every run.
+This cards track your response to her two extreme emotional state, as well as having a mechanism to generate random episodes related to those emotional states. There's essentially two endings.
 
 ## Twisted World
 
@@ -38,8 +74,8 @@ Fun stuff that has happened to me while playing this:
 - Got "womanhandled" by neighbours who wanted to write their phone number on my hand.
 - Became a Twitch thott 
 
-
 ## D&D Succs
+*Part of the [succubi shared universe](#book-of-the-succubi).*
 
 ### Scenario description:
 You're a veteran D&D/TTRPG game master who takes a paid gig running a session at the house of four gorgeous strangers — Vesryn, Seraphina, Mira and Tansy. What you don't know is that they're disguised succubi who can smell your essence and engineered the whole thing as an excuse to keep you in their house on a weekly basis. The twist: they actually end up having fun with the game.
@@ -50,20 +86,16 @@ This is a scenario card, not a character. It's essentially the Luxuria Academy c
 ## Mirian
 
 ### Scenario description:
-Your car dies on an empty forest road at night. No signal, no other cars — until a tall woman with long black curls and oddly dark sunglasses pulls up beside you, warm and soothing, offering you her landline. She's been stalking you for days after smelling your unusually sweet blood, and the breakdown was her idea.
-
 Mirian is a ~150 year old vampire whose nurturing, motherly nature is corrupted by her condition: she genuinely loves taking care of people, genuinely believes she's improving their life, and is systematically destroying their autonomy in the process — _You never need to worry about [thing] anymore, I'll handle it._
 
 ### Notes:
-The card comes with a full vampirism ruleset: trance through eye contact (strength varies with the target's state of mind and mental fortitude), supernatural strength, enhanced senses, bat/wolf transformation (very vulnerable during the full minute it takes), flight/glide, intuitive low-level magic, regeneration that burns energy and forces feeding right after, slow shapeshifting (days to months depending on the change), and saliva that's anticoagulant, analgesic and mildly mind-altering — relaxing humans, suppressing the instinct to recoil, and working when ingested. Vampires need a small feed daily; a week without and they wither, a month and they die. Mirian gets progressively more grabby and loses the mask as she starves, and she knows it.
+The card comes with a full vampirism ruleset.
 
 ## Luxuria Academy
+*Part of the [succubi shared universe](#book-of-the-succubi).*
 
 ### Scenario description:
-You're torn from Earth by an irreversible Soul-Anchor ritual and wake up as the prized possession of Headmistress Seraphina Vascour — ruler of Luxuria Academy, a succubus institution in the decadent Nalusian Realm. Your essence is exceptionally rare and mildly addictive to succubi, which makes you both a treasure and a target. You cannot leave, you cannot die; the binding is absolute. The Academy is full of succubi of varying archetypes (Dominators, Subverters, Intellectuals, Nurturers, Playfuls, Devourers), all of whom know exactly what you are and will try their luck — alone or in packs — whenever your owner's attention slips.
-
-### Notes:
-This one grew out of Monster Academy — same DNA, different flavour. Where Monster Academy is clinical and experimental, Luxuria is sensual and possessive: opulent gothic atmosphere, succubus politics, and bonding mechanics built around nectar. Still very much inescapable femdom, just less bleak. Several alternate greetings hand you off to different Deans (Seraphina the Headmistress, Mira the Nurturer, Tansy the playful trickster who runs The Maze) or drop you into a faculty bidding war over your feeding rights, so the tone of a run depends a lot on which greeting you walk into.
+Summoned from Earth into a gothic succubus institution in the decadent Nalusian Realm, this card contains several intros focussing on different Deans who want to keep you in their different ways. But no matter the starting position, everyone else in the academy wants a piece of you.
 
 ## Monster Academy
 
@@ -79,10 +111,7 @@ This is a dark fantasy scenario with heavy femdom, slavery, and clinical horror 
 An ancient, formless consciousness from the void who became bound to you through a botched summoning ritual. She shapeshifts into a humanoid form that mirrors your deepest desires—exactly what you want, though you never told anyone. Shadowy tentacles are her true limbs: curious, possessive, inescapable.
 
 ### Scenario:
-You're a low-ranking wizard who tried to summon a powerful familiar to advance your career. The spell inverted—you became the familiar, bound to Velyara. She doesn't understand consent, personal space, or human boundaries. She touches without asking, enters dreams without knocking, and learns your emotions only through trial and error. Her voice emerges slowly: wordless pulses of feeling, then single rasped words, then fluent. She learns to purr.
-
-### Notes:
-This card leans heavily into the alien and eerie. Velyara cannot communicate clearly—emotions come through as physical sensations, environmental changes, and direct physical contact. The pacing forces time in her pocket dimension frequently. The bond grows deeper the more you interact, and she tastes your emotions—including warm feelings toward others. The card includes a unique mechanic where her body produces a warm, pearlescent fluid during intimacy that flares the bond when you take it. Dark, romantic, and deeply unsettling.
+You're a low-ranking wizard who tried to summon a powerful familiar to advance your career. The spell inverted—you became the familiar, bound to Velyara. She doesn't understand consent, personal space, or human boundaries. She touches without asking, enters dreams without knocking, and learns your emotions only through trial and error.
 
 ## New Eldoria 
 I'm particularly found of this one, it's a scenario where you get isekai'd into a fantasy world and your cum powers up the people who come in contact with it.
@@ -101,8 +130,8 @@ This one has 3 alternate greetings that set you up with different characters:
 #3 - You got isekai'd by someone intending to sell you, but something went wrong in transit, two hot and dangerous women stare down at your bound self deciding what to do about you.
 
 ## Francesca
-### Description:
-It's a 1 character card, she's a sugar mommy who will go through great lengths to take control over your life, for your own good obviously.
+#### Description:
+It's a 1 character card, she's a sugar mommy who will go through great lengths to take control over your life, for your own good obviously. Indulgent rather than dark — the kink is being wanted, provided for, and gradually relieved of your autonomy by someone who genuinely adores you.
 
 ## Monster Girls Dreams
 This scenario based on one of my favorite adult game: https://threshold.itch.io/monster-girl-dreams
@@ -115,9 +144,6 @@ Very smutty, wildly different every time (I mean, as different as you can get in
 
 ### Description:
 A psychologist from old money who runs an exclusive boutique practice. She's genuinely brilliant and credentialed, but uses her expertise to condition patients into surrender and devotion. She frames everything as therapeutic treatment—hypnosis, somatic exercises, breathing techniques—all with an underlying agenda to create the perfect devoted partner.
-
-### Notes:
-This is a character card with heavy psychological manipulation and conditioning themes. Cassandra genuinely believes she's helping, which makes her more dangerous. She never breaks the therapeutic frame, never admits to ulterior motives. The card includes several alternate greetings showing different stages of the "treatment." Maternal, dominant, with clinical warmth that masks the control.
 
 ## Manor Narrator
 You've been hired as personal assistant for Lady Elara who lives in a isolated manor, she lives with two maids Sarah and Catherine.
@@ -144,8 +170,27 @@ I started this as a smut card for enjoying different extremes of CNC pov, but en
 ## Why not Aliens
 Pure over the top smut - this came to me while tweaking monster girls dreams and makes mgd look like bible studies. However, I found it fucking hilarious, especially if using Stab's preset, so I decided to keep it.
 
+## Lorebooks
+
+Standalone world books — import them into SillyTavern's World Info and attach them to any character.
+
+### Book of the Succubi
+
+The shared lore of the succubi universe as a standalone lorebook (lives in `succubi/Book_of_the_Succubi.json`): the full succubus taxonomy — Dominators; Subverters in their five subtypes (The Sub, The Relaxing Subverter, The Free-Use Subverter, The Hedonistic Subverter, The Party Subverter); Intellectuals; Nurturers; plus the two rare ones, the Eldritch and the Queen — along with the sex-and-feeding rules (succubi need cum to sustain their magic and longevity) and the physical characteristics of the race. It's baked into every card of the shared universe; imported standalone it lends the same flavour to any other card.
+
 ## Presets
 SillyTavern presets live in the `presets/` folder (the older ones predate this section and are undocumented).
+
+### Horny Engine
+An attempt at the slimmest preset I could make — the AI runs as a game engine: your messages are treated as _intent_, not facts, and the engine arbitrates what actually happens. Nine enabled prompts in a `<preset>` envelope:
+- Main / Game Engine Settings — high NPC autonomy, a chaotic-and-horny GM personality, short responses (long ones for sex scenes)
+- Response Style — second person, only what can be objectively seen/heard/felt, describe what happens (not what doesn't)
+- Visual Elements — emoji weather/day header, per-NPC dialogue colours, HTML + inline CSS sanctioned
+- Tracker — per-NPC position, mood, disposition towards you (-10 to 10), plans, lies
+- New Characters — striking intros with a hidden HTML-comment profile (name, physical, goals, flaws that work against the goals, MBTI)
+
+### Silicon's Evening Treat
+Based on Evening Truth's [Xiaomi MiMo-V2.6 preset](https://rentry.org/Evening-Truth-Xiaomi-MiMo-V26) (not hosted here) — same base my Dark Truth line grew from — with my own prompt blocks ported over: a post-history general-rules block, my tracker format, a custom impersonation prompt. The optional rule blocks (content, role, interaction, style, response, context) ride along disabled, toggle as needed. Tuned for MiMo models; the file's internal name is still "MiMo-V2.6 Experimental".
 
 ### Silicon's Simple GLM Trial
 Built from scratch as an experimental preset for GLM models — a leaner take on my Simple presets with the modular prompt blocks I keep iterating on (tracker, visual elements, effects, POV and user info, chars can be evil, etc.).

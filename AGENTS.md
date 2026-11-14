@@ -11,6 +11,8 @@ The README and the site are maintained **by hand** — nothing is generated auto
 
 When documenting a preset change, diff it against the related/similarly-named preset and note the actual differences — don't guess.
 
+When writing descriptions for new cards, do your best to infer the intent/fun of the card and sell it to the target audience without spoilers. Remember: less is more. The notes section is for "implementation details" and other author thoughts — if a card has unique/novel mechanics, note them, but always ask the operator what the notes for each card should be (and correct their grammar and spelling).
+
 ## Conventions
 
 - **NEVER commit files the user hasn't explicitly mentioned.** Untracked files in the repo are WIP and stay uncommitted until the user names them. When asked to commit/push, stage only the files the user referred to — "push everything" means everything *discussed in the conversation*, not everything in `git status`.

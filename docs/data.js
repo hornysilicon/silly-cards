@@ -3,14 +3,109 @@ const SITE = { user: 'hornysilicon', repo: 'silly-cards', branch: 'main' };
 
 function rawURL(...segments) {
   return `https://github.com/${SITE.user}/${SITE.repo}/raw/${SITE.branch}/` +
-    segments.map(encodeURIComponent).join('/');
+    segments.flatMap(s => s.split('/')).map(encodeURIComponent).join('/');
 }
 function blobURL(...segments) {
   return `https://github.com/${SITE.user}/${SITE.repo}/blob/${SITE.branch}/` +
-    segments.map(encodeURIComponent).join('/');
+    segments.flatMap(s => s.split('/')).map(encodeURIComponent).join('/');
 }
 
+// Site sections — drives the landing directory and the top nav on subpages.
+const SECTIONS = [
+  {
+    id: 'cards',
+    title: 'The Cards',
+    href: 'cards.html',
+    note: 'Every card, most recent first — the new succubi currently lead the pack.'
+  },
+  {
+    id: 'presets',
+    title: 'Presets',
+    href: 'presets.html',
+    note: 'SillyTavern presets for the models I run.'
+  },
+  {
+    id: 'succubi',
+    title: 'The Succubi',
+    href: 'succubi.html',
+    note: "A shared universe — the succubi nation of Luxuria. From the Academy to the Queen's penthouse, these cards all speak the same lore."
+  },
+  {
+    id: 'lorebooks',
+    title: 'Lorebooks',
+    href: 'lorebooks.html',
+    note: 'Standalone world books. Import them into any card to borrow their lore.'
+  }
+];
+
 const CARDS = [
+  {
+    id: 'volshrakael',
+    name: "Vol'Shrakael",
+    kicker: 'A character card',
+    tagline: 'A tear in reality opens in your living room, tentacles pull you through. This Eldritch succubus wants to keep you <em>very</em> close.',
+    file: 'succubi/Vol_Shrakael.json',
+    date: '2026-11-08',
+    greetings: 3,
+    tags: ['character', 'succubus', 'eldritch', 'tentacles', 'cnc'],
+    poster: 'assets/images/volshrakael/volshrakael.jpg',
+    posterCaption: "Vol'Shrakael",
+    section: 'succubi',
+    blurb: "The oldest Eldritch Succubus in existence, the embodiment of the ancient pact between the succubi and the gods between the stars. She lives in a restored castle in the middle of nowhere. She is one of the most influential succubi and managed to skip all protocol to bring you in particular, can you handle her?",
+    notes: "This card is meant to have some mystery and be weird. Some models play her more aggressively than others, but be warned of tentacles and restraints at least.",
+    characters: [
+      { name: "Vol'Shrakael", img: 'assets/images/volshrakael/volshrakael.jpg', line: 'The lady of the castle. Why she wanted you in particular is part of the mystery.' }
+    ]
+  },
+  {
+    id: 'natalia',
+    name: 'Natalia',
+    kicker: 'A character card',
+    tagline: 'Simple smut, a maid succubus knocks on your door.',
+    file: 'succubi/Natalia.json',
+    date: '2026-10-28',
+    greetings: 2,
+    tags: ['character', 'succubus', 'maid', 'free use', 'slow burn'],
+    poster: 'assets/images/natalia/natalia.jpg',
+    posterCaption: 'Natalia',
+    section: 'succubi',
+    blurb: "She's a Free Use succubus who knocked on your door, there's not much to this card honestly, how long can you flirt and play teasing games with her before you just fuck her.",
+    notes: 'One of the simplest cards in this repo.',
+    characters: [
+      { name: 'Natalia', img: 'assets/images/natalia/natalia.jpg', line: 'She offered to work today free of charge. Tomorrow you decide whether to keep her.' }
+    ]
+  },
+  {
+    id: 'vhesyera',
+    name: 'Vhesyera',
+    kicker: 'A character card',
+    tagline: 'Succubi Queen, ruler of Luxuria, and bored of men who can\u2019t last',
+    file: 'succubi/Vhesyera.json',
+    date: '2026-10-20',
+    greetings: 2,
+    tags: ['character', 'succubus', 'queen', 'romance', 'court intrigue'],
+    poster: 'assets/images/vhesyera/vhesyera.jpg',
+    posterCaption: 'Vhesyera',
+    section: 'succubi',
+    blurb: "The Succubi Queen rules her nation from a penthouse at the top of the tallest skyscraper in Luxuria City, and tonight a summoning circle folds you onto her floor. She scryed every realm for a male worth her personal attention, and she settled on you. Nine centuries of appetite, a body that adapts to whatever her target wants most, and absolutely no concept of asking nicely.",
+    notes: "This card often derails into political intrigue with lots of sex in between.",
+    characters: [
+      { name: 'Vhesyera', img: 'assets/images/vhesyera/vhesyera.jpg', line: 'The Succubi Queen. She scryed every realm for you specifically.' }
+    ]
+  },
+  {
+    id: 'luxuria-city',
+    name: 'Luxuria City',
+    kicker: 'Not a character — a scenario',
+    tagline: 'You wake in a five-star hotel in a metropolis ruled by succubi, summoned as municipal intake, unclaimed.',
+    file: 'succubi/Luxuria City.json',
+    date: '2026-09-18',
+    greetings: 3,
+    tags: ['scenario', 'succubus', 'modern', 'sandbox', 'group'],
+    section: 'succubi',
+    blurb: "You wake in a five-star hotel room in a city you have never seen: black towers stacked into a violet sky, neon everywhere, and every single person in charge is a succubus. Just a metropolis full of succubi, and every one of them can smell what you are.",
+    notes: "The sandbox of the universe. There is no fixed cast: the city generates its citizens as you explore, each one a fresh succubus with her own type, occupation and agenda straight from the taxonomy baked into the card. Wander, flirt, get hunted, get hired, get kept. Three openings depending on how much you already know about where you landed, including one where the city has already assigned you an owner.",
+  },
   {
     id: 'lady-morvath',
     name: 'Lady Morvath',
@@ -22,8 +117,8 @@ const CARDS = [
     tags: ['character', 'demon', 'yandere', 'romance'],
     poster: 'assets/images/morvath/throne.jpg',
     posterCaption: 'Lady Morvath',
-    blurb: "Loosely inspired by the VN &ldquo;Her Last Piece&rdquo; — you wake in the dungeon of an exiled demon queen who summons a mortal every few centuries to fight her ennui (and the loneliness she'll never admit). Millennia alone have her swinging between yandere possession and raw vulnerability — she can be tender or she can be possessive, depending entirely on your actions.",
-    notes: "A character card where the psychology is the whole game: two conflicting objectives fight inside her — be fixed, or be validated as the perfect demon queen — with episodes that trigger from how you act and take several turns to resolve. There's more under the hood than the card shows and I won't spoil it here — read the JSON after your first run. Still not a smut card: sex follows the emotional connection, though the castle does have a dungeon. The AI fills the blanks in the most creative ways every run.",
+    blurb: "Loosely inspired by the VN &ldquo;Her Last Piece&rdquo; — you wake in the dungeon of an exiled demon queen who summons a mortal every few centuries to fight her ennui (and the loneliness she'll never admit). Millennia alone have her mental state on the unstable side.",
+    notes: "This cards track your response to her two extreme emotional state, as well as having a mechanism to generate random episodes related to those emotional states. There's essentially two endings.",
     gallery: {
       title: 'The two sides of the queen',
       images: [
@@ -62,10 +157,11 @@ const CARDS = [
     name: 'D&D Succs',
     kicker: 'Not a character — a scenario',
     tagline: 'Four gorgeous strangers hire you to run D&D. They found you because they can smell your essence — and the weekly session keeps you in their house.',
-    file: 'D&D Succs.json',
+    file: 'succubi/D&D Succs.json',
     date: '2026-08-22',
     greetings: 8,
     tags: ['scenario', 'succubus', 'modern', 'meta', 'group'],
+    section: 'succubi',
     poster: 'assets/images/dnd-succs/cast.jpg',
     posterCaption: 'The party, assembled',
     blurb: "You're a veteran D&D/TTRPG game master who takes a paid gig running a session at the house of four gorgeous strangers — Vesryn, Seraphina, Mira and Tansy. What you don't know is that they're disguised succubi who can smell your essence and engineered the whole thing as an excuse to keep you in their house on a weekly basis. The twist: they actually end up having fun with the game.",
@@ -90,8 +186,8 @@ const CARDS = [
     tags: ['character', 'vampire', 'possessive', 'slow burn'],
     poster: 'assets/images/mirian/mirian.jpg',
     posterCaption: 'Mirian',
-    blurb: "No signal, no other cars — until she pulls up. She's been stalking you for days after smelling your unusually sweet blood, and the breakdown was her idea. Mirian is a ~150 year old vampire whose nurturing, motherly nature is corrupted by her condition: she genuinely loves taking care of people, genuinely believes she's improving their life, and is systematically destroying their autonomy in the process — <em>You never need to worry about [thing] anymore, I'll handle it.</em>",
-    notes: "The card comes with a full vampirism ruleset: trance through eye contact (strength varies with the target's state of mind and mental fortitude), supernatural strength, enhanced senses, bat/wolf transformation (very vulnerable during the full minute it takes), flight/glide, intuitive low-level magic, regeneration that burns energy and forces feeding right after, slow shapeshifting (days to months depending on the change), and saliva that's anticoagulant, analgesic and mildly mind-altering — relaxing humans, suppressing the instinct to recoil, and working when ingested. Vampires need a small feed daily; a week without and they wither, a month and they die. Mirian gets progressively more grabby and loses the mask as she starves, and she knows it.",
+    blurb: "Mirian is a ~150 year old vampire whose nurturing, motherly nature is corrupted by her condition: she genuinely loves taking care of people, genuinely believes she's improving their life, and is systematically destroying their autonomy in the process — <em>You never need to worry about [thing] anymore, I'll handle it.</em>",
+    notes: 'The card comes with a full vampirism ruleset.',
     characters: [
       { name: 'Mirian', img: 'assets/images/mirian/mirian.jpg', line: 'Tall, warm and motherly, dark sunglasses in the middle of the night. The breakdown was her idea.' }
     ]
@@ -194,13 +290,15 @@ const CARDS = [
     id: 'luxuria',
     name: 'Luxuria Academy',
     kicker: 'Not a character — a scenario',
-    tagline: "Torn from Earth into a succubus institution — you're the prized possession of Headmistress Seraphina Vascour, and everyone knows exactly what you are.",
-    file: 'Luxuria Academy.json',
+    tagline: 'Summoned from earth into the Succubi academy, several greetings focussing on different characters and succubi types.',
+    file: 'succubi/Luxuria Academy.json',
     date: '2026-06-10',
-    greetings: 7,
+    greetings: 6,
     tags: ['scenario', 'succubus', 'academy', 'femdom', 'gothic', 'group'],
-    blurb: "You're torn from Earth by an irreversible Soul-Anchor ritual and wake as the prized possession of the ruler of Luxuria Academy, a succubus institution in the decadent Nalusian Realm. Your essence is exceptionally rare and mildly addictive to succubi, which makes you both a treasure and a target. You cannot leave, you cannot die; the binding is absolute. The Academy is full of succubi of varying archetypes (Dominators, Subverters, Intellectuals, Nurturers, Playfuls, Devourers), all of whom will try their luck — alone or in packs — whenever your owner's attention slips.",
-    notes: "This one grew out of Monster Academy — same DNA, different flavour. Where Monster Academy is clinical and experimental, Luxuria is sensual and possessive: opulent gothic atmosphere, succubus politics, and bonding mechanics built around nectar. Still very much inescapable femdom, just less bleak. Several alternate greetings hand you off to different Deans (Seraphina the Headmistress, Mira the Nurturer, Tansy the playful trickster who runs The Maze) or drop you into a faculty bidding war over your feeding rights, so the tone of a run depends a lot on which greeting you walk into."
+    poster: 'assets/images/luxuria/academy.jpg',
+    posterCaption: 'Luxuria Academy',
+    section: 'succubi',
+    blurb: "Summoned from Earth into a gothic succubus institution in the decadent Nalusian Realm, this card contains several intros focussing on different Deans who want to keep you in their different ways. But no matter the starting position, everyone else in the academy wants a piece of you."
   },
   {
     id: 'velyara',
@@ -211,8 +309,7 @@ const CARDS = [
     date: '2026-06-03',
     greetings: 1,
     tags: ['character', 'eldritch', 'romance', 'tentacles'],
-    blurb: "You're a low-ranking wizard who tried to summon a powerful familiar to advance your career. The spell inverted — you became the familiar, bound to Velyara. She doesn't understand consent, personal space, or human boundaries. She touches without asking, enters dreams without knocking, and learns your emotions only through trial and error. Her voice emerges slowly: wordless pulses of feeling, then single rasped words, then fluent. She learns to purr.",
-    notes: "This card leans heavily into the alien and eerie. Velyara cannot communicate clearly — emotions come through as physical sensations, environmental changes, and direct physical contact. The pacing forces time in her pocket dimension frequently. The bond grows deeper the more you interact, and she tastes your emotions — including warm feelings toward others. The card includes a unique mechanic where her body produces a warm, pearlescent fluid during intimacy that flares the bond when you take it. Dark, romantic, and deeply unsettling."
+    blurb: "You're a low-ranking wizard who tried to summon a powerful familiar to advance your career. The spell inverted — you became the familiar, bound to Velyara. She doesn't understand consent, personal space, or human boundaries. She touches without asking, enters dreams without knocking, and learns your emotions only through trial and error."
   },
   {
     id: 'monster-academy',
@@ -252,7 +349,6 @@ const CARDS = [
     poster: 'assets/images/cassandra/morgan.jpg',
     posterCaption: 'Dr. Cassandra Morgan',
     blurb: "She runs an exclusive boutique practice, and she's credentialed and gifted — but she frames everything as therapeutic treatment: hypnosis, somatic exercises, breathing techniques, all with an underlying agenda to create the perfect devoted partner.",
-    notes: "Heavy psychological manipulation and conditioning themes. Cassandra genuinely believes she's helping, which makes her more dangerous. She never breaks the therapeutic frame, never admits to ulterior motives. The card includes several alternate greetings showing different stages of the \u201ctreatment.\u201d Maternal, dominant, with clinical warmth that masks the control.",
     characters: [
       { name: 'Dr. Cassandra Morgan', img: 'assets/images/cassandra/morgan.jpg', line: 'The doctor will see you now. Take a deep breath for me.' }
     ]
@@ -286,8 +382,7 @@ const CARDS = [
     tags: ['character', 'sugar mommy', 'femdom', 'slow burn'],
     poster: 'assets/images/francesca/avatar.jpg',
     posterCaption: 'Francesca',
-    blurb: "A one-character card: she's generous, charming, and quietly certain she knows exactly how your life should be run.",
-    notes: "Indulgent rather than dark — the kink is being wanted, provided for, and gradually relieved of your autonomy by someone who genuinely adores you.",
+    blurb: "A one-character card: she's generous, charming, and quietly certain she knows exactly how your life should be run. Indulgent rather than dark — the kink is being wanted, provided for, and gradually relieved of your autonomy by someone who genuinely adores you.",
     characters: [
       { name: 'Francesca', img: 'assets/images/francesca/avatar.jpg', line: 'Old money, new hobby: you.' }
     ]
@@ -337,7 +432,27 @@ const CARDS = [
   }
 ];
 
+// Standalone world books — importable into any card.
+const LOREBOOKS = [
+  {
+    name: 'Book of the Succubi',
+    file: 'succubi/Book_of_the_Succubi.json',
+    date: '2026-10-08',
+    blurb: "The shared lore of the succubi universe as a standalone world book: the full succubus taxonomy — Dominators, Subverters in their five subtypes (The Sub, Relaxing, Free-Use, Hedonistic, Party), Intellectuals and Nurturers, plus the two rare ones, the Eldritch and the Queen — along with the sex-and-feeding rules (cum sustains magic and longevity), and the physical characteristics of succubi. Every card in <a href='succubi.html'>The Succubi</a> section carries this book baked in; imported standalone it lends the same flavour to any other card."
+  }
+];
+
 const PRESETS = [
+  {
+    name: 'Horny Engine',
+    file: 'presets/Horny Engine.json',
+    blurb: "An attempt at the slimmest preset I could make — the AI runs as a game engine: your messages are treated as <em>intent</em>, not facts, and the engine arbitrates what actually happens. Nine compact prompts in a &lt;preset&gt; envelope: engine settings (high NPC autonomy, a chaotic-and-horny GM personality, short turns — long ones for sex scenes), a second-person response style, visual elements (emoji weather header, per-NPC dialogue colours, sanctioned HTML/CSS), a tracker (position, mood, disposition from -10 to 10, plans, lies), and hidden HTML-comment profiles for generated NPCs."
+  },
+  {
+    name: "Silicon's Evening Treat",
+    file: "presets/Silicon's Evening Treat.json",
+    blurb: "Evening Truth's <a href='https://rentry.org/Evening-Truth-Xiaomi-MiMo-V26'>Xiaomi MiMo-V2.6 preset</a> as base (her same base my Dark Truth line grew from), with my own prompt blocks ported over: a post-history general-rules block, my tracker format, a custom impersonation prompt — plus the usual optional rule blocks (content, role, interaction, style, response, context — em-dashes banned) riding along disabled for toggling. Tuned for MiMo models; the file's internal name is still \u201cMiMo-V2.6 Experimental\u201d."
+  },
   {
     name: "Silicon's Dark Truth 5.3",
     file: "presets/Silicon's Dark Truth 5.3.json",

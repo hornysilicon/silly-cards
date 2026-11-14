@@ -8,12 +8,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
   <div class="container narrow">
 
-    <a class="backlink" href="index.html">&larr; All cards</a>
+    <a class="backlink" href="cards.html" id="backlink">&larr; The Cards</a>
 
     <header class="detail-head" id="head">
       <div class="kicker" id="d-kicker"></div>
@@ -35,8 +35,10 @@
       <div class="section-title" id="blurb-title">The Scenario</div>
       <div class="prose" id="d-blurb"></div>
 
-      <div class="section-title">Notes</div>
-      <div class="prose" id="d-notes"></div>
+      <div id="d-notes-wrap" hidden>
+        <div class="section-title">Notes</div>
+        <div class="prose" id="d-notes"></div>
+      </div>
 
       <div id="d-cast-block" hidden>
         <div class="section-title">Dramatis Personae</div>
@@ -77,18 +79,27 @@
     <button class="lb-btn lb-next" id="lb-next" aria-label="Next portrait">&#8250;</button>
   </div>
 
-  <script src="data.js?v=6"></script>
+  <script src="data.js?v=10"></script>
   <script>
     const qs = new URLSearchParams(location.search);
     const card = CARDS.find(c => c.id === qs.get('id')) || CARDS[0];
     document.title = `${card.name} — Horny Silicon's ST Cards`;
+
+    const backlink = document.getElementById('backlink');
+    if (card.section === 'succubi') {
+      backlink.href = 'succubi.html';
+      backlink.innerHTML = '&larr; The Succubi';
+    }
 
     document.getElementById('d-kicker').textContent = card.kicker;
     document.getElementById('d-name').textContent = card.name;
     document.getElementById('d-tagline').innerHTML = card.tagline;
     document.getElementById('blurb-title').textContent = card.kicker.includes('character') ? 'The Character' : 'The Scenario';
     document.getElementById('d-blurb').innerHTML = `<p>${card.blurb}</p>`;
-    document.getElementById('d-notes').innerHTML = `<p>${card.notes}</p>`;
+    if (card.notes) {
+      document.getElementById('d-notes-wrap').hidden = false;
+      document.getElementById('d-notes').innerHTML = `<p>${card.notes}</p>`;
+    }
     document.getElementById('d-meta').innerHTML =
       `<span>${card.date}</span><span>·</span><span>${card.greetings} greeting${card.greetings > 1 ? 's' : ''}</span>` +
       (card.link ? `<span>·</span><a href="${card.link}" target="_blank" rel="noopener">${card.linkLabel || 'reference'}</a>` : '');
@@ -104,7 +115,7 @@
       document.getElementById('d-hero-cap').textContent = card.posterCaption || card.name;
     }
 
-    if (card.characters) {
+    if (card.characters && card.characters.length > 1) {
       document.getElementById('d-cast-block').hidden = false;
       const cast = document.getElementById('d-cast');
       for (const ch of card.characters) {
@@ -203,7 +214,8 @@
     // fall back to raw main.
     if (card.detail === 'notes') {
       const mount = document.getElementById('dd-detail');
-      fetch(`../${encodeURIComponent(card.file)}`)
+      const local = '../' + card.file.split('/').map(encodeURIComponent).join('/');
+      fetch(local)
         .catch(() => fetch(rawURL(card.file)))
         .then(r => r && r.ok ? r : fetch(rawURL(card.file)))
         .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })

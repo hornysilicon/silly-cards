@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Cards — Horny Silicon's ST Cards</title>
+  <meta name="description" content="Every SillyTavern card by Horny Silicon, most recent first.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=7">
+</head>
+<body>
+  <div class="container">
+
+    <nav class="topnav" id="topnav"></nav>
+
+    <header class="page-head">
+      <div class="over">The whole catalogue</div>
+      <h1>The Cards</h1>
+      <div class="ornament"><span class="diamond"></span></div>
+      <p class="sub">Every card, most recent first — the succubi currently lead the pack, and their kin have a <a href="succubi.html">section of their own</a>.</p>
+    </header>
+
+    <main class="grid" id="cards"></main>
+
+    <footer>
+      Cards, lorebooks and presets by Horny Silicon ·
+      <a href="https://github.com/hornysilicon/silly-cards">view the repository</a>
+    </footer>
+
+  </div>
+
+  <script src="data.js?v=10"></script>
+  <script src="site.js?v=1"></script>
+  <script>
+    renderTopnav('cards');
+    renderGrid(document.getElementById('cards'), CARDS);
+  </script>
+</body>
+</html>
