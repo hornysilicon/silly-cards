@@ -13,7 +13,7 @@ When documenting a preset change, diff it against the related/similarly-named pr
 
 When writing descriptions for new cards, do your best to infer the intent/fun of the card and sell it to the target audience without spoilers. Remember: less is more. The notes section is for "implementation details" and other author thoughts — if a card has unique/novel mechanics, note them, but always ask the operator what the notes for each card should be (and correct their grammar and spelling).
 
-After adding a card's site entry, run `python3 .opencode/check_cards.py --fix <card.json...>` to fill its metadata: `data.creator`, `data.extensions.source` (the card's Pages URL, derived from the `docs/data.js` entry) and `creator_notes`/`creatorcomment`. Run it with no args to check cards changed vs `origin/main`.
+After adding a card's site entry, run `python3 .opencode/check_cards.py --fix <card.json...>` to fill its metadata: `data.creator`, `data.extensions.source` (the card's Pages URL, derived from the `docs/data.js` entry) and `creator_notes`/`creatorcomment`, which hold the card's **site-styled page HTML** (generated from the same entry) so Chub imports get a good-looking page. The "this is the Chub version" header is NOT part of it — chubbify prepends that to the chub copy. Run check_cards with no args to check cards changed vs `origin/main`.
 
 ## Conventions
 
